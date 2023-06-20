@@ -1,0 +1,56 @@
+img{width:100%;}
+.title{
+    font-size:50px;
+    font-weight:700;
+    display:flex;
+    justify-content:center;
+    margin:20px;
+    color:	#98b2a8;
+}
+#dice{
+    display:flex;
+    justify-content:center;
+    padding:20px 0;
+}
+.pcImg{
+    width:400px;
+}
+.userImg{
+    width:400px;
+}
+#pc{
+    width:30%;
+}
+#user{
+    width:30%;
+}
+.name{
+    display:flex;
+}
+.btwrap{
+    text-align:center;
+}
+button{
+    width:200px;
+    font-size: 50px;
+    border-radius:50px;
+    box-shadow: 10px 10px 10px #5b5b5b;
+    color:#98b2a8;
+    background-color:#f8e9d9
+}
+button:hover{
+    background-color:#98b2a8;
+    color:	#f8e9d9
+}
+
+#result{
+    font-size:30px;
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+}
+#history{
+    padding:30px;
+    border-top:1px dashed #98b2a8;
+    font-size:23px;
+}

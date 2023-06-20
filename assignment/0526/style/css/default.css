@@ -1,0 +1,151 @@
+body{
+    margin:0;
+    padding:0;
+    position:relative;
+
+}
+.universe{
+    width:100%;
+}
+.benner{
+    background-image:url(../image/background-img.jpg);
+}
+#login{
+    width:1500px;
+    color:gray;
+    text-align:end;
+    margin:0 auto;
+    padding:10px 0;
+}
+.title{
+    height:100px;
+    padding:20px 0;
+    text-align:center;
+    color:beige;
+    font-size:90px;
+    font-family:serif;
+}
+.main{
+    position:sticky;
+    background-color:#422446;
+    
+}
+.mainMenu{
+    width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-around;
+    padding:25px 0;
+    font-size:20px;
+    color:beige;
+}
+.menu:hover{
+    color:#ad009f;
+}
+.section{
+    width:1200px;
+    height:900px;
+    margin:0 auto;
+    margin-top:20px;
+    display:flex;
+}
+.section_left{
+    width:60%;
+    height:800px;
+
+}
+.section_right{
+    width:40%;
+    height:800px;
+}
+
+.sectionImg img{
+    width:100%;
+}
+
+.bigbang{
+    width:100%;
+    position:relative;
+}
+.bigbang_title{
+    padding:10px;
+}
+.bigbang_more{
+    margin:15px 0;
+    position:absolute;
+    right:30px;
+    top:0;
+}
+.bigbang_content{
+    font-size:20px;
+    padding:0 20px;
+}
+.gallery{
+    width:100%;
+}
+.gallery_title{
+    padding:10px 30px;
+}
+.galleryList{
+    list-style-type:none;
+}
+.list{
+    margin:20px 0;
+    display:flex;
+}
+.galleryImg div{
+    height:150px;
+}
+.galleryImg img{
+    width:80%;
+}
+.notice{
+    width:1000px;
+    margin:0 auto;
+    height:500px;
+}
+.notion_title{
+    padding:0 15px;
+}
+.notice_con{
+    list-style-type:none;
+    display:flex;
+    border-bottom:2px solid gray;
+    justify-content:space-between;
+}
+.notice_list{
+    font-size:20px;
+}
+.hit{
+    padding-right:20px;
+}
+#footer{
+    background-color:#422446;
+    height:300px;
+}
+.footer{
+    width:1200px;
+    margin:0 auto;
+}
+.ft_menu{
+    color:beige;
+    display:flex;
+}
+.ft{
+    list-style-type:none;
+    margin:0;
+    padding:30px;
+    font-size:20px;
+}
+.adress{
+    padding:0 70px;
+    color:beige;
+    font-size:25px;
+    font-family:initial;
+}
+.copyright{
+    padding:10px 70px;
+    color:beige;
+    font-size:25px;
+    font-family:initial;
+}

@@ -1,0 +1,102 @@
+#main_top{
+    display:flex;
+}
+
+.top_left{
+    width:500px;
+    padding:20px;
+}
+.top_left img{
+    width:460px;
+}
+.top_right{
+    width:500px;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item_title{
+    padding-bottom:30px;
+    border-bottom:1px solid #d0d0d0;
+}
+.item_price{
+    flex-grow:1;
+    padding-top:30px;
+}
+.item_button button:first-child{
+    border:1px solid #346aff;
+    color:#346aff;
+    background:#fff;
+    width:200px;
+    height:50px;
+}
+.item_button button:last-child{
+    background:#346aff;
+    border:1px solid #346aff;
+    color:#fff;
+    width:200px;
+    height:50px;
+}
+#main_content{
+    width:1080px;
+}
+
+.tap_title ul{
+    list-style-type: none;
+    width:100%;
+    border-top:2px solid #101431;
+    border-left:1px solid #93938c;
+    border-bottom:1px solid #93938c;
+}
+.tap_title ul li{
+    width:24.61%;
+    display:inline-block;
+    border-right:1px solid #93938c;
+    text-align:center;
+    padding:15px 20px 14px 0;
+}
+.tap_title ul li:first-child{
+    margin-bottom:-2px;
+    border-bottom:1px solid #fff;
+}
+.detail_img{
+    width:750px;
+    margin:50px auto;
+}
+#main_bottom{
+    margin:100px 0;
+    width:1080px;
+    border-top:2px solid #101431;
+    padding-top:50px;
+    position:relative;
+}
+#main_bottom h3{
+    font-size:25px;
+    margin:10px 0;
+}
+.review_guide{
+    margin-bottom:20px;
+}
+.star_rating{
+    width:302px;
+}
+.star_rating, .star_rating span{
+    display:inline-block;
+    height:55px;
+    overflow:hidden;
+    background: url(../image/star.png)
+
+}
+.star_rating span{
+    background-position: left bottom;   /*별이 색칠되는 시작점을 지정*/
+    line-height:0;  /* line의 간격을 쓰지 않기 위해 line-height를 사용*/
+    vertical-align: top;
+    width:91%;
+}
+.giude_btn{
+    position:absolute;
+    top:70px;
+    right:0;
+    color:#346aff;
+}

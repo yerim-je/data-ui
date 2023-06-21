@@ -1,3 +1,8 @@
+
+let show = false;           // start 클릭 유무
+let cmp_num = new Array();  // 두개의 숫자를 비교하기 위한 배열
+let choice = new Array();   // 클릭한 두 개의 span태그 인덱스 저장 배열
+
 let num = new Array();      // 화면에 표시되는 숫자 저장 배열
 let board = new Array();    // 숫자가 출력될 위치 저장 배열
 
@@ -37,11 +42,66 @@ window.onload = function(){
 
 
 function play(){
-    let pic = document.getElementsByClassName("picture");
+    let pic = document.getElementsByClassName("back");
     for( var i=0; i<pic.length; i++){
         pic[board[i]].innerHTML = num[i%4]  ;
     }
-}
-function same_search(){
+
+    setTimeout( function(){
+        let pic = document.getElementsByClassName("back");
+        for(var i=0; i<pic.length; i++){
+            pic[i].style.display="none";
+        }
+        show = true;    // start 버튼을 클릭했다는 의미
+    },1000);
 
 }
+
+
+
+function same_search(){
+    if(!show){  //show 변수가 false라면 not연산자에 의해 true가 적용
+        // show 변수가 true라면 not연산자에 의해 false가 적용
+        alert("start버튼을 클릭하세요. ");
+        return;
+    }
+    // this.style.background="red";  (확인용)
+    var child = this.childNodes[0]; // firstChild도 사용 가능
+    child.style.display="inline";
+    
+    let span = document.getElementsByClassName("back");
+    for(var i=0; i<span.length; i++){
+        if(span[i] === child)
+            choice.push(i); // 클릭한 td의 span태그 인덱스를 배열에 저장
+    }
+    cmp_num.push(parseInt(child.innerText));    // 클릭한 td>span의 숫자를 배열에 저장
+    
+    if(cmp_num.length == 2){    // 배열에 숫자 2개가 저장되어있다면 비교
+        if(cmp_num[0] == cmp_num[1]){
+            cmp_num = new Array();
+            choice = new Array();   // 같은 값을 클리했을 때 초기화
+        }else{
+            setTimeout(function(){
+                cmp_num=new Array ();
+                let pic = document.getElementsByClassName("back");
+                for(var i=0; i<choice.length; i++){
+                    pic[choice[i]].style.display="none";
+                }
+                choice = new Array();
+            },300)
+            
+        }
+    }
+}
+// 자식태그 가져오는 법
+// children - 모든 자식태그를 HTMLcollection 배열로 가져온다
+// childNodes - 모든 자식태그를 nodeList 배열로 가져온다.
+// firstChild - 첫째
+// lastChild - 막내
+
+// getElementById()또는 getElementsByClassName() 등을 사용하면 태그에 객체라는 것이 반환된다.
+// 태그의 객테를 변수에 담아서 사용해왔다. 자바스크립트에서는 HTML 태그를 Element, 요소 또는 객체라고 한다.
+// 객체를 표현하는 방법 중에 자기 자신을 의미하는 this가 있다.
+// same_search함수를 실행시킨 건 td태그이다.
+// 즉, td라는 객체에 의해 same_search함수가 실행된것이다.
+// same_search함수안에서 this라고 사용하면 same_search함수를 실행시킨 td태그를 의미한다.

@@ -64,7 +64,7 @@ function same_pic(){
         return;
     }
 
-    if(step == 30){
+    if(step == 35){
         alert(" 게임 오버. 다시 도전하세요. ");
         show = false;
         return;

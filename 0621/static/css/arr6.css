@@ -1,9 +1,11 @@
-
 #wrap{
     width:80%;
-    max-width:500px;
+    max-width:600px;
     min-width:300px;
     margin:50px auto;
+}
+img{
+    width:100%;
 }
 #start{
     width:200px;
@@ -11,13 +13,17 @@
     display:block;
     font-size:40px;
     border:0;
-    background:#3b322b;
+    background:#b0bef7;
     color:#fcf9f4;
     padding:10px;
     border-radius:15px;
 }
+#start:hover{
+    background:#254038;
+    color:#b0bef7;
+}
 .picture{
-    width:100px;
+    width:150px;
     height:150px;
     border:2px solid #b0bef7;
     text-align:center;
@@ -25,7 +31,10 @@
 .a{
     display:none;
 }
-div{
-    margin:10px auto 0 auto;
+table div{
+    width:80%;
+    max-width:500px;
+    min-width:300px;
+    margin:50px auto;
 
 }

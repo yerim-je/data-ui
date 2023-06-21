@@ -93,7 +93,7 @@ function same_search(){
     if(cmp_num.length == 2){    // 배열에 숫자 2개가 저장되어있다면 비교
         if(cmp_num[0] == cmp_num[1]){
             cmp_num = new Array();
-            choice = new Array();   // 같은 값을 클리했을 때 초기화
+            choice = new Array();   // 같은 값을 클릭했을 때 초기화
             end++;  // 같은 숫자 찾으면 end 증가
         }else{
             setTimeout(function(){

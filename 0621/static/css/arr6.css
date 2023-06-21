@@ -1,0 +1,26 @@
+#wrap{
+    width:80%;
+    max-width:500px;
+    min-width:300px;
+    margin:50px auto;
+}
+#start{
+    width:200px;
+    margin:20px auto 50px auto;
+    display:block;
+    font-size:40px;
+    border:0;
+    background:#3b322b;
+    color:#fcf9f4;
+    padding:10px;
+    border-radius:15px;
+}
+.picture{
+    width:100px;
+    height:150px;
+    border:2px solid #b0bef7;
+    text-align:center;
+}
+.a{
+    display:none;
+}

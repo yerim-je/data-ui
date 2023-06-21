@@ -2,6 +2,8 @@
 let show = false;           // start 클릭 유무
 let cmp_num = new Array();  // 두개의 숫자를 비교하기 위한 배열
 let choice = new Array();   // 클릭한 두 개의 span태그 인덱스 저장 배열
+let end = 0;        // 4가 되면 게임 끝
+let step= 0;         // 클릭 횟수 제한을 위한 변수
 
 let num = new Array();      // 화면에 표시되는 숫자 저장 배열
 let board = new Array();    // 숫자가 출력될 위치 저장 배열
@@ -25,6 +27,8 @@ function init(){ //초기화
             board.push(temp);
         }else{i--;}
     }
+    var count = document.getElementById("count");
+    count.innerText = step;
 }
 
 window.onload = function(){
@@ -63,8 +67,18 @@ function same_search(){
     if(!show){  //show 변수가 false라면 not연산자에 의해 true가 적용
         // show 변수가 true라면 not연산자에 의해 false가 적용
         alert("start버튼을 클릭하세요. ");
+        return;     // start 버튼을 클릭하지 않으면 same_search를 실행시키지 않는다.
+    }
+
+    // 클릭횟수 증가시키기
+    if(step == 20){     // 20번 클릭하면 더 이상 진행되지 않게 show는 false로 바꾸고 함수 종료
+        alert("다음기회에 도전하세요");
+        show = false;
         return;
     }
+    var count = document.getElementById("count");
+    count.innerHTML = ++step;
+
     // this.style.background="red";  (확인용)
     var child = this.childNodes[0]; // firstChild도 사용 가능
     child.style.display="inline";
@@ -80,6 +94,7 @@ function same_search(){
         if(cmp_num[0] == cmp_num[1]){
             cmp_num = new Array();
             choice = new Array();   // 같은 값을 클리했을 때 초기화
+            end++;  // 같은 숫자 찾으면 end 증가
         }else{
             setTimeout(function(){
                 cmp_num=new Array ();
@@ -91,6 +106,11 @@ function same_search(){
             },300)
             
         }
+    }
+    if(end==4){
+        alert("게임 끝");
+        show = false;
+        
     }
 }
 // 자식태그 가져오는 법

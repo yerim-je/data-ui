@@ -7,7 +7,7 @@ let step= 0;         // 클릭 횟수 제한을 위한 변수
 
 let num = new Array();      // 화면에 표시되는 숫자 저장 배열
 let board = new Array();    // 숫자가 출력될 위치 저장 배열
-
+ 
 function init(){ //초기화
     // 중복없이 랜덤값 넣기
     // indexOf를 이용해서 -1이 나오면 일치하는게 없다.

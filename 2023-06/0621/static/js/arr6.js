@@ -4,7 +4,7 @@ let cmp_num = new Array();
 let choice = new Array();
 let step = 0;
 let end=0;
-
+ 
 let num = new Array();
 let img = new Array();
 

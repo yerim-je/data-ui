@@ -1,0 +1,43 @@
+*{ box-sizing : border-box;}
+body, ul, p, h1,h2,h3,h4,h5,
+ol,dl,dd{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style-type: none;
+}
+#wrap{
+    width:85%;
+    min-width:500px;
+    max-width:1000px;
+    margin: 50px auto;
+}
+.line{
+    border-bottom:2px solid #7f03ce;
+}
+#menu{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:20px;
+}
+.menu_bt{
+    font-size:25px;
+    display:inline-block;
+    padding:10px 20px;
+    background:	#bbbbbb;
+    color:#7f03ce;
+    border-radius:5px;
+    font-weight:900;
+}
+.menu_icon{
+    display:none;
+}
+
+/* 
+    이하 
+*/
+
+@media screen and(max-width:786px) {
+    
+}

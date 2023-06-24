@@ -38,7 +38,7 @@ window.onload = function(){
     start.addEventListener("click",play);
     // 버튼 태그에 클릭 이벤트 등록하기(실행함수는 play 함수)
     
-    let pic = document.getElementsByClassName("picture");
+    let pic = document.getElementsByClassName("picture");   // 클릭시 숫자 보이기
     for( var i=0; i<pic.length; i++){
         pic[i].addEventListener("click",same_search);
     }
@@ -76,7 +76,7 @@ function same_search(){
         show = false;
         return;
     }
-    var count = document.getElementById("count");
+    var count = document.getElementById("count");   // 클릭횟수
     count.innerHTML = ++step;
 
     // this.style.background="red";  (확인용)

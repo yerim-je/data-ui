@@ -20,21 +20,34 @@ ul{
     margin: 50px auto;
 }
 .line{
-    border-bottom:2px solid #a173bf;
+    border-bottom:2px solid gray;
 }
 #menu{
     display:flex;
     justify-content:space-around;
     margin-bottom:20px;
 }
-.menu_bt{
+.menu_bt {
     font-size:25px;
     display:inline-block;
     padding:10px 20px;
-    background:	#bbbbbb;
-    color:#a173bf;
     border-radius:20px;
     font-weight:900;
+}
+.menu_bt:first-child{
+    background:#c2f6fa;
+    color:white;
+    text-shadow: 0px 0px 5px gray;
+}
+.menu_bt:nth-child(2){
+    background:#fac6c2;
+    color:white;
+    text-shadow: 0px 0px 5px gray;
+}
+.menu_bt:nth-child(3){
+    background:#dafac2;
+    color:white;
+    text-shadow: 0px 0px 5px gray;
 }
 .menu_icon{
     display:none;
@@ -88,6 +101,37 @@ ul{
     height:50px;
     text-align: center;
     border-radius:100%;
+}
+
+#inpur_box{
+    width:320px;
+    margin:50px auto;
+}
+.mynum{
+    width:50px;
+    height:50px;
+    font-size:30px;
+    text-align:center;
+    margin-right:2px;
+}
+.mynum::-webkit-inner-spin-button,
+.mtnum::-webkit-outer-spin-button{
+    -webkit-appearance: none; margin:0;
+}
+#bt{
+    position:relative;
+    width:320px;
+    margin:0 auto;
+    text-align:center;
+    top: -20px;
+}
+#bt button{
+    border:0;
+    background:#f7edfe;
+    font-size:25px;
+    padding:5px 25px;
+    color:#e2c2fa;
+    border-radius:30px;
 }
 
 .list_active{

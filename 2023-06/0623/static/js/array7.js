@@ -25,6 +25,12 @@
 
     브라우저의 크기가 변경되면 동작하는 함수 - resize();
 */
+
+let lotto = new Array();  // 역대 당첨번호 저장될 배열
+
+
+
+
 window.onresize=function(){
     var wd = window.innerWidth;
     if( wd > 786){
@@ -42,6 +48,22 @@ window.onload=function(){
     var icon=document.getElementsByClassName("strapIcon");
     icon[0].addEventListener("click",open_close);
     content= document.querySelector("#content");
+    var file=document.querySelector("#lotto");
+    file.addEventListener("input",function(e){
+        let target = e.target;      // 선택된 파일 참조
+        let files = target.files;   // 선택된 파일은 배열의 형식으로 저장된다.
+        //첫번째 파일 참조를 해야 내가 선택한 파일을 읽을 수 있다.
+        let reader = new FileReader();
+        reader.addEventListener("load",function(){
+            var str = reader.result;
+            var temp = str.split("\n");
+
+            for( var i in temp){
+                lotto.push(temp[i].split("\t"));
+            }
+        })
+        reader.readAsText(files[0]);
+    })
 }
 
 function open_close(){      // 메뉴 펼치기
@@ -67,11 +89,26 @@ function open_close(){      // 메뉴 펼치기
         //     list.classList.add("list_active");
 }
 let content =null;
-function win_confirm(){
-    alert("당첨확인 클릭");
+function win_confirm(){ // 당첨확인 함수
+    var out="<div id='input_box'>"
+    var input = "";
+    for(var i=1; i<=6; i++){
+        input+="<input type='number' class='mynum'>";
+        }
+    out += input + "</div>";
+    out += "<div id='bt'><button onclick='check()'>확인</button></div>";
+    out += "<div id='result'></div>";
+    content.innerHTML=out;
+    
 }
-function make_num(){
+function check(){
 
+}
+function make_num(){    // 번호생성 함수
+    if(lotto.length==0){
+        alert("로또 파일을 먼저 열어주세요.");
+        return;
+    }
     var out = "<table class='makeTable'>";
     
     for(var n=1; n<=5; n++){
@@ -104,16 +141,38 @@ function make_num(){
         }else {odd++;}
     }
 
-    // 산술적 복합성 값 구하기
+    // 산술적 복합성 값 구하기  (ac)
     // 마지막 인덱스부터 인덱스 1번까지
+    var ac = new Array();
     for(var i=lucky_num.length-1; i>=1; i--){
-        for(var k=i-1; i>=1; i--){
-            lucky_num[i] - lucky_num[k];
+        for(var k=i-1; k>=1; k--){
+            var tmp = lucky_num[i] - lucky_num[k]
+            if(ac.indexOf(tmp) == -1){
+                ac.push(tmp);
+            }
         }
+    }
+    // 역대 당첨번호 비교하기
+    // lotto는 이치원 배열 - 1차원 배열이 두 개 있기 때문에 인덱스도 두 개 이다.
+    // i변수에는 첫번째 인덱스를 k 변수에는 두번째 인덱스를 표현한다.
+    for(var i in lotto){    
         
+        for(var k=2; k<=7; k++){
+            if(ac.indexOf(lotto[0][k]) != -1){
+// 역대 당첨번호와 같은 숫자가 ac 배열에 있다면 ac배열에서 삭제하기
+// 배열에 저장되어 있는 데이터를 삭제하는 방법
+// 1. 배열이름.pop()
+// 2. 특정인덱스의 데이터를 삭제 - 배열이름 splice( 인덱스, 갯수 )
+//      삭제할 데이터의 인덱스와 해당 인덱스부터 몇개 삭제할 것인지 갯수
+                var index = ac.indexOf(lotto[i][k]);
+                ac.slice(index,1);
+            }
+        }
     }
 
+
     out += "<td colspan='7'>"+
+    "AC : "+( ac.length-5 )+" "+
     "총합 : "+total+"  "+
     "홀/짝 : "+odd+"/"+even+"</td>";
 
@@ -123,6 +182,6 @@ function make_num(){
     
     content.innerHTML=out;
 }
-function num_count(){
+function num_count(){   // 출현횟수 함수
     alert("출현횟수 클릭");
 }

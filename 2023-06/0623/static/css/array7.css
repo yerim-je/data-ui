@@ -68,7 +68,7 @@ ul{
     background:#fff;
     color:#aaaaaa;
     font-size:30px;
-    box-shadow: 0px 5px 10px #a173bf;
+    box-shadow: 0px 5px 10px gray;
     width:100%;
 }
 
@@ -78,10 +78,20 @@ ul{
 
 }
 
-.list_bt:hover{
-    background:	#9c5ac6;
+.list_bt:hover:nth-child(1){
+    background:#c2f6fa;
     color:white;
-    box-shadow:0px 3px -5px gray;
+    text-shadow: 0px 0px 5px gray;
+}
+.list_bt:hover:nth-child(2){
+    background:#fac6c2;
+    color:white;
+    text-shadow: 0px 0px 5px gray;
+}
+.list_bt:hover:nth-child(3){
+    background:#dafac2;
+    color:white;
+    text-shadow: 0px 0px 5px gray;
 }
 
 .makeTable{

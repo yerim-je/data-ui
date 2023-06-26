@@ -63,7 +63,7 @@ window.onload=function(){
             }
         })
         reader.readAsText(files[0]);
-    })
+    });
 }
 
 function open_close(){      // 메뉴 펼치기

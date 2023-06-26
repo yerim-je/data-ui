@@ -34,19 +34,31 @@ ul{
     border-radius:20px;
     font-weight:900;
 }
-.menu_bt:first-child{
+#menu .menu_bt:nth-child(1){
+    background:#c2f6fa;
+}
+#menu .menu_bt:nth-child(2){
+    background:#fac6c2
+}
+#menu .menu_bt:nth-child(3){
+    background:#dafac2;
+}
+.menu_list li:nth-child(1) .list_bt:hover{
     background:#c2f6fa;
     color:white;
+    font-weight:900;
     text-shadow: 0px 0px 5px gray;
 }
-.menu_bt:nth-child(2){
+.menu_list li:nth-child(2) .list_bt:hover{
     background:#fac6c2;
     color:white;
+    font-weight:900;
     text-shadow: 0px 0px 5px gray;
 }
-.menu_bt:nth-child(3){
+.menu_list li:nth-child(3) .list_bt:hover{
     background:#dafac2;
     color:white;
+    font-weight:900;
     text-shadow: 0px 0px 5px gray;
 }
 .menu_icon{
@@ -78,21 +90,7 @@ ul{
 
 }
 
-.list_bt:hover:nth-child(1){
-    background:#c2f6fa;
-    color:white;
-    text-shadow: 0px 0px 5px gray;
-}
-.list_bt:hover:nth-child(2){
-    background:#fac6c2;
-    color:white;
-    text-shadow: 0px 0px 5px gray;
-}
-.list_bt:hover:nth-child(3){
-    background:#dafac2;
-    color:white;
-    text-shadow: 0px 0px 5px gray;
-}
+
 
 .makeTable{
     border-spacing:10px;

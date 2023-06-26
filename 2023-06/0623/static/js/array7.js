@@ -89,21 +89,6 @@ function open_close(){      // 메뉴 펼치기
         //     list.classList.add("list_active");
 }
 let content =null;
-function win_confirm(){ // 당첨확인 함수
-    var out="<div id='input_box'>"
-    var input = "";
-    for(var i=1; i<=6; i++){
-        input+="<input type='number' class='mynum'>";
-        }
-    out += input + "</div>";
-    out += "<div id='bt'><button onclick='check()'>확인</button></div>";
-    out += "<div id='result'></div>";
-    content.innerHTML=out;
-    
-}
-function check(){
-
-}
 function make_num(){    // 번호생성 함수
     if(lotto.length==0){
         alert("로또 파일을 먼저 열어주세요.");
@@ -181,7 +166,4 @@ function make_num(){    // 번호생성 함수
 
     
     content.innerHTML=out;
-}
-function num_count(){   // 출현횟수 함수
-    alert("출현횟수 클릭");
 }

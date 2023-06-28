@@ -1,0 +1,26 @@
+
+
+
+
+#container{
+    display:grid;
+    grid-template-columns:repeat(5, minmax(150px, auto));
+    grid-template-rows:repeat(3, minmax(200px, auto));
+    /* flex로 똑같이 만들때 사용되는 부모의 속성값
+    display: flex;
+    flex-wrap:wrap;
+    flex로 속성값을 주게 되면 브라우저의 크기를 줄였을때 flex-wrap에 의해
+    줄이 늘어나게 된다. 이를 방지하려면 속성값이 늘어나게 되어 수정을 할 경우 불편해진다.
+    flex를 사용하지 않고 grid를 사용하면 여려줄의 속성값을 줄일수 있기에 grid사용을 지향한다.
+    */
+}
+.item{
+    border:1px solid black;
+    /* flex로 똑같이 만들때 사용되는 자식의 속성값
+    width:20%;
+    min-width:150px;
+    heigth:100%;
+    min-heigth:200px;
+    box-sizing:border-box;
+    */
+}

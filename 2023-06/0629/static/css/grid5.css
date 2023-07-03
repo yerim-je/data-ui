@@ -16,12 +16,13 @@
     justify-content: center;
     gap:20px;
     grid-template-columns:1fr;
-    grid-template-rows:450px 2800px 100px;
+    grid-template-rows:70px 380px 2800px 100px;
 }
 ul{
     list-style-type:none;
 }
-#nav{
+
+#nav{ 
     display:grid;
     grid-template-columns:repeat(3,1fr);
     padding:15px;

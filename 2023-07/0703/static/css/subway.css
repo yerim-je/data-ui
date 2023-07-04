@@ -1,0 +1,43 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background:ivory;
+}
+#wrap{
+    width:500px;
+    height:550px;
+    margin:50px auto;
+    position:relative;
+}
+.station{
+    display:flex;
+    flex-wrap:wrap;
+}
+#rail_1{
+    flex-direction: row;
+}
+#rail_2{
+    flex-direction: column;
+    position:absolute;
+    right:0;
+}
+#rail_3{
+    flex-direction:row-reverse;
+    height:1050px;
+    align-self:end;
+}
+#rail_4{
+    flex-direction:column-reverse;
+    position:absolute;
+    top:50px;
+}
+.station div{
+    align-self:center;
+    width:50px;
+    height:50px;
+    border:1px solid black;
+    text-align:center;
+}

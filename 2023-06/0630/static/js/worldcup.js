@@ -55,11 +55,12 @@ function 선택(){
     
     if(this == choose_tag("left")){
         토너먼트2.push(토너먼트1[순서[count*2-2]]);
-        if(round == 2) final();
     }else{
         토너먼트2.push(토너먼트1[순서[count*2-1]]);
-        if(round == 2) final();
     }
+
+    if(round == 2) final("left","right");
+
     if(count == round/2){
         round=round/2;
         count=0;
@@ -73,6 +74,11 @@ function 선택(){
     var title =choose_tag("title");
     title.innerHTML=round+"강  "+count+"/"+(round/2);
     show();
+    if(round == 2){
+        title.innerHTML="결승";
+    }else if(round == 1){
+        title.innerHTML="우승";
+    }
 }
 function show(){
     var left=choose_tag("leftimg");

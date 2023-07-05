@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function tall(){
+            t = document.getElementsByClassName("tall");
+            p = document.getElementById("possibal");
+            p.addEventListener("click",pass(t));
+        }
+        function pass(t){
+            if( t[i] >= 150){
+                docu();
+            }
+              
+        }
+        function docu(){
+            document.write("바이킹 탑승가능");
+        }
+    </script>
+</head>
+<body>
+    키<input type="text" class="tall"><br>
+    키<input type="text" class="tall"><br>
+    키<input type="text" class="tall"><br>
+    <button id="possibal"> 탑승결과 </button>
+</body>
+</html>

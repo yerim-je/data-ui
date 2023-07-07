@@ -16,18 +16,25 @@ function map_draw(){    // 지도를 그리기 위한 함수
     var out = "";
     for(var line=0; line<4; line++){
         var t=line*10;
-        if( line%2 != 0){
+        if( line%2 != 0) {
             t+=9;
-        }
-        while( t < 10 ){
-            // 1줄 마지막 인덱스 9, 2줄 마지막 인덱스 10, 3줄 마지막 인덱스 29, 4줄 마지막 인덱스 30
-            out += "<div class='station'>";
-            out += "<div class='train'><i class='fa-solid fa-train'></i></div>";
-            out += "<div class='mark'><div class='rail'></div>"+
-            "<span class='stop'><i class='fa-regular fa-square'></i></span>"+
-            "</div>";
-            out += "<div class='name'>"+st_name[i]+"</div></div>"
+            while( t >= line*10 ){  // 1줄 마지막 인덱스 9, 2줄 마지막 인덱스 10, 3줄 마지막 인덱스 29, 4줄 마지막 인덱스 30
+                out += make(t--);
+            }
+        }else {
+            while(t <= line*10+9 )
+                out += make(t++)    // ++연산자를 뒤에 넣어주면 우선순위가 내려가서 나중에 계산된다.
         }
     }
     map.innerHTML=out;
+}
+function make(t){
+    var out = "";
+    out += "<div class='station'>";
+    out += "<div class='train'><i class='fa-solid fa-train'></i></div>";
+    out += "<div class='mark'><div class='rail'></div>"+
+    "<span class='stop'><i class='fa-regular fa-square'></i></span>"+
+    "</div>";
+    out += "<div class='name'>"+st_name[t]+"</div></div>"
+    return out;
 }

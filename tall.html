@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>바이킹</title>
     <script>
-        
-        function tall(){
-            t = document.getElementsByClassName("tall");
+        let t = new Array();
+        function input(){
+            for (var i=0; i<3; i++)
+            {t.push(document.getElementsByClassName("tall").value)};
             p = document.getElementById("possibal");
-            p.addEventListener("click",pass(t));
+            p.addEventListener("click", bt );
         }
-        function pass(t){
-            if( t[i] >= 150){
-                docu();
-            }
-              
+        function bt(){
+            
+            alert("탑승");
+            
         }
-        function docu(){
+        function result(){
             document.write("바이킹 탑승가능");
         }
     </script>

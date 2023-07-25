@@ -41,6 +41,7 @@
 .menu_select:hover{
     background-color: var(--bs-green);
     color: var(--bs-white);
+    cursor: pointer;
 }
 
 #menulist{

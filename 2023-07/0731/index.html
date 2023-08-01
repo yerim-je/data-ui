@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script>
+    $(function(){
+        $("#box1").html("<b>보이기</b>");
+        $("#box1").click(function(){
+           //alert(" 너 지금 나 클릭했냐...?");
+           $("#box2").show(3000);
+        });
+        //$("#box1").on("click",function(){   });
+        //.on을 쓰는 이유는 많이 사용하지 않는 이벤트는 .on을 사용하여 이벤트를 준다.
+    });
+</script>
+<style>
+    #box1{width:100px; height:100px; background:magenta;}
+    #box2{width:100px; height:100px; background:cyan; display:none;}
+</style>
+</head>
+<body>
+    <div id="box1"></div>
+    <br>
+    <div id="box2"></div>
+
+    <style>
+        #box3{width:100px; height:100px; background:khaki;}
+    </style>
+    <fieldset class="fd1"style="width:300px;">
+        <legend>fade</legend>
+        <button id="fade_out">in</button>
+        <button id="fade_in">out</button>
+        <button id="fade_toggle">toggle</button>
+        <div id="box3"></div>
+    </fieldset>
+    <script>
+        $("#fade_out").click(function(){
+            $("#box3").fadeOut("fast");
+        });
+        $("#fade_in").click(function(){
+            $("#box3").fadeIn("slow");
+        });
+        $("#fade_toggle").click(function(){
+            $("#box3").fadeToggle(5000);
+        });
+    </script>
+
+    <fieldset class="slide" style="width:300px;">
+        <legend>slide</legend>
+        <button id="slide_down">down</button>
+        <button id="slide_up">up</button>
+        <button id="slide_toggle">toggle</button>
+        <div id="box4" style="width:100px; height:100px; background:greenyellow; display:none;"></div>
+    </fieldset>
+    <script>
+        $("#slide_down").click(function(){
+            $("#box4").slideDown();
+        });
+        $("#slide_up").click(function(){
+            $("#box4").slideUp();
+        });
+        $("#slide_toggle").click(function(){
+            $("#box4").slideToggle();
+        });
+    </script>
+</body>
+</html>

@@ -6,8 +6,86 @@
     <title>family</title>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
+    <script>
+        // jQuery는 자바스크립트를 보다 쉽게 사용하기 위해서 사용
+        // 특정 이벤트 발생시 연계돼는 태그들을 관리하기 위해서 부모와 자식 태그를 이용한다.
+        $(function(){
+            // 부모찾기
+
+            // parent()     - 상위태그(부모)선택
+            // parents()    - 상위 모든태그 선택(html까지)
+            // parents("p") - 상위태그 중 p 태그까지만 선택
+            // parents("#i")- 상위태그 중 id가 i인 태그까지만 선택
+            // parentUntil("div")   - 현재 태그와 div태그 사이의 부모 태그 선택
+            var parent = $("#child1_1").parents("#origin");
+            parent.css("background","pink");
+
+            $(".grandchild").parentsUntil("#origin").css("background","green");
+            // origin을 찾을 땐 부모의 부모를 찾으면된다.
+            // parents는 해당태그의 모든 부모를 의미한다.
+            // 그 부모들 중에서 바디를 뻰 특정 부모만 찾고 싶다면 parents("div"); < 이렇게 입력하면 div태그의 부모만 찾는다.
+        
+            // 자식 찾기
+            // $("#parent2").children("ul").css("font-size","20px");
+            
+            // $("#parent2").children(":first").css("font-size","20px");
+            $("#parent2").children(":eq(1)").css("font-size","20px");
+            
+            
+            $("#parent2").find("li").css("background","lightblue"); // 하위에 있는 특정 모든태그를 선택
+            // find는 누구를 찾을 것인지 반드시 입력해야 한다. (검색기능과 같다.)
+            // c언어에서 전체(All)는 *로 표시한다.
+        
+            // 형제찾기
+            // sibling()    - 형제선택
+            // next()       - 다음형제 선택
+            // prev()       - 이전형제 선택
+            // nextAll()    - 뒤에 있는 형제 전체 선택
+            // prevAll()    - 앞에 있는 형제 전채 선택
+            // nextUntil("a")   - 뒤에 있는 현재중 a태그 사이에있는 형제 선택
+            // prevUntil("a")   - 앞에 있는 현재중 a태그 사이에있는 형제 선택
+
+            $("#child1_1").click(function(){
+                // $(this).siblings("#child1_2").children("span:eq(1)").css("display","block");
+                $(this).next().children("span:eq(1)").css("color","red");
+            });
+        
+            $("li").first().css("color","red"); //li태그의 첫번째 태그
+            $("li").last().css("color","blue"); //li태그의 마지막 태그
+            $("li").eq(2).css("color","yellow");//li태그의 3번째 태그
+
+            // filter(".child_list")    - 클래스가 child_list인 태그들만 선택
+            // not(".child_list")       - 클래스가 child_list인 태그 제외 선택
+            $("li").filter(".child_list").css("background","orange");
+            $("li").not(".child_list").css("background","brown");
+
+
+
+
+        });
+
+    </script>
 </head>
 <body>
-    
+    <div id="origin">
+        <div id="parent1" style="font-size:50px;">
+            <b id="child1_1">child1_1</b>
+            <p id="child1_2">
+                <span class="grandchild">나 증손이야(딸)</span>
+                <span class="grandchild">나 증손이야(아들)</span>
+                <!-- 하위태그들은 기본적으로 부모태그의 영향을 받는다.(div의 스타일을 기본적으로 그대로 받는다.) -->
+            </p>
+        </div>
+        <div id="parent2">
+            <div id="child2_1">child2_1</div>
+            <ul id="child2_2">
+                <li class="child_list">공부공부공부</li>
+                <li class="child_list">공부해서 남주나?</li>
+                <li class="child_list">공부가 잘못됐다면 다른방법으로...</li>
+                <li>좋으니 사랑해서</li>
+                <li>사랑을 시작할 땐</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

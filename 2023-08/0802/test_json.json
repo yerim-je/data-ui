@@ -1,0 +1,11 @@
+{
+    "parson":
+    [
+        {"name" : "이상준","notebook" : "mac","age" : 20},
+        {"name" : "김선향","notebook" : "samsung","age" : 24},
+        {"name" : "문자영","notebook" : "LG","age" : 21},
+        {"name" : "정재현","notebook" : "samsung","age" : 25},
+        {"name" : "배주현","notebook" : "samsung","age" : 29},
+        {"name" : "김슬기","notebook" : "mac","age" : 19}
+    ]
+}

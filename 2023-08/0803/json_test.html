@@ -56,4 +56,18 @@
                 item.title+"</td><td>"+item.completed+"</td></tr>");
         })
     });
+    $("#bt").click(function(){
+        var param = "";
+        if($("#userId").val() != '') param+="userId="+$("#userId").val();
+        if($("#title").val() != '') param += (param==''?'':'&')+"title="+$("#title").val();
+        if($("#completed").val() != '')param += (param==''?'':'&')+"completed="+$("#completed").val();
+
+        $("#list").empty();
+        $.getJSON("https://jsonplaceholder.typicode.com/todos?"+param,function(data){
+            $.each(data, function(i,item){
+                $("#list").append("<tr><td>"+item.userId+"</td><td>"+item.id+"</td><td>"+
+                    item.title+"</td><td>"+item.completed+"</td></tr>");
+            })
+        });
+    });
 </script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    $.getJSON("./전국건강증진센터표준데이터.json",function(data){
+        //console.log(data.records[0],(data.fields[0].id));
+        console.log(data);
+
+        var keyset = Object.keys(data.records[0]);
+        console.log(keyset);
+        
+        console.log(data.records[2][keyset[0]]);    //data.records[0]. 건강증진센터명
+        
+        $.each*data.records,function(i,item){
+            var search = item.filter(function(k,v){
+                return item[k]===" 건강검진"
+            })
+            console.log(search);
+
+
+        }
+
+
+
+    });
+</script>

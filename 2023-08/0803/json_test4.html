@@ -25,7 +25,7 @@
 <body>
     <div id="option">
         <div id="sort_age">나이<i class="bi bi-arrow-up-circle"></i><i class="bi bi-arrow-down-circle"></i></div>
-        <div id="sort_addt">사는곳<i class="bi bi-arrow-up-circle"></i><i class="bi bi-arrow-down-circle"></i></div>
+        <div id="sort_addT">사는곳<i class="bi bi-arrow-up-circle"></i><i class="bi bi-arrow-down-circle"></i></div>
     </div>
     <table id="list">
         <thead>
@@ -48,28 +48,26 @@
     ["김승겸",30,"은행동"],["임민지",28,"문화동"],["이상준",33,"선화동"],
     ["김선향",34,"가양동"],["송은선",31,"태평동"]];
 
-    $.each(arr,function(i,data){
-        $("#person").append("<tr><td>"+data[0]+"</td><td>"+data[1] +"</td><td>"+data[2]+"</td></tr>")
-    });
+    data_view();
+    function data_view(){
+        $("#person").empty();
+        $.each(arr,function(i,data){
+            $("#person").append("<tr><td>"+data[0]+"</td><td>"+data[1] +"</td><td>"+data[2]+"</td></tr>")
+        });
+    };
     $(".bi-arrow-down-circle").hide();
 
     $("#sort_age").click(function(){
         $(this).children().toggle();
             if ($(this).children(".bi-arrow-down-circle").is(":visible")) {
                 arr.sort((a, b) => b[1] - a[1]);
-                $("#person").empty();
-                $.each(arr,function(i,data){
-                    $("#person").append("<tr><td>"+data[0]+"</td><td>"+data[1] +"</td><td>"+data[2]+"</td></tr>")
-                });
+                data_view();
             } else {
                 arr.sort((a, b) => a[1] - b[1]);
-                $("#person").empty();
-                $.each(arr,function(i,data){
-                    $("#person").append("<tr><td>"+data[0]+"</td><td>"+data[1] +"</td><td>"+data[2]+"</td></tr>")
-                });
+                data_view();
             }
     });
-    $("#sort_addt").click(function(){
+    $("#sort_addT").click(function(){
         $(this).children().toggle();
         if($(this).children(".bi-arrow-down-circle").is(":visible")){
             arr.sort(function(a,b){
@@ -77,20 +75,14 @@
                 if( a[2] < b[2] ) return 1;
                 if( a[2] === b[2] ) return 0;
             })
-            $("#person").empty();
-            $.each(arr,function(i,data){
-                    $("#person").append("<tr><td>"+data[0]+"</td><td>"+data[1] +"</td><td>"+data[2]+"</td></tr>")
-            });
+            data_view();
         }else{
             arr.sort(function(a,b){
                 if( a[2] > b[2] ) return 1;
                 if( a[2] < b[2] ) return -1;
                 if( a[2] === b[2] ) return 0;
             })
-            $("#person").empty();
-            $.each(arr,function(i,data){
-                    $("#person").append("<tr><td>"+data[0]+"</td><td>"+data[1] +"</td><td>"+data[2]+"</td></tr>")
-            });
+           data_view();
         }
     });
 

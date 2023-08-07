@@ -1,0 +1,81 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+#Hwrap{
+    width:800px;
+    margin:0 auto;
+    position:relative;
+}
+#header{
+    padding:20px 0;
+    width:100%;
+    position:relative;
+}
+#defaultSearch{
+    width:100%;
+    padding:0 50px;
+    padding-bottom:10px;
+    border-bottom:2px solid #888;
+}
+#defaultSearch .searchInput{
+    display:flex;
+    width:100%;
+    height:30px;
+    font-size:17px;
+    border:1px solid #bbb;
+    border-radius:10px;
+    padding:0 10px;
+    justify-content: space-between;
+    align-items:center;
+}
+#searchWord{
+    border:0;
+    outline:0;
+    height:100%;
+    width:100%;
+}
+#searchFilter{
+    position:relative;
+    width:100%;
+    padding:20px 50px;
+    border-bottom:2px solid #888;
+}
+#searchFilter .filterMore{
+    text-align: center;
+    position:relative;
+    top:-20px;
+    font-size: 25px;
+    cursor:pointer;
+}
+#searchFilter .filterDetail{
+    width:100%;
+    position:relative;
+}
+#searchFilter .filterDetail h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+#detailBox{
+    width:100%;
+    position:relative;
+    border:1px solid #444;
+}
+#detailBox .detailList{
+    border:1px solid #999;
+    display:flex;
+    align-items:center;
+    
+}
+#detailBox .detailList .itemDt{
+    padding:13px 0;
+    padding-left:10px;
+    width:140px;
+    background:royalblue;
+    color:#fff;
+}
+#detailBox .detailList .itemDd{
+    width:560px;
+    padding:0 8px;
+}

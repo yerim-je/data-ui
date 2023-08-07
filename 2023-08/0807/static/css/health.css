@@ -40,14 +40,21 @@
     position:relative;
     width:100%;
     padding:20px 50px;
-    border-bottom:2px solid #888;
 }
 #searchFilter .filterMore{
     text-align: center;
     position:relative;
-    top:-20px;
     font-size: 25px;
     cursor:pointer;
+}
+#searchFilter .moreUp{
+    border-bottom:2px solid #888;
+}
+#searchFilter .morerDown .bi-chevron-compact-down{
+    display:none;
+}
+#searchFilter .moreUp .bi-chevron-compact-up{
+    display:none;
 }
 #searchFilter .filterDetail{
     width:100%;
@@ -66,7 +73,6 @@
     border:1px solid #999;
     display:flex;
     align-items:center;
-    
 }
 #detailBox .detailList .itemDt{
     padding:13px 0;
@@ -79,3 +85,4 @@
     width:560px;
     padding:0 8px;
 }
+.hide{display:none;}

@@ -47,13 +47,12 @@
     font-size: 25px;
     cursor:pointer;
 }
-#searchFilter .moreUp{
-    border-bottom:2px solid #888;
-}
-#searchFilter .morerDown .bi-chevron-compact-down{
+#searchFilter .moreUp{border-bottom:2px solid #888;}
+#searchFilter .moreDown{top:-20px;}
+#searchFilter .moreUp .bi-chevron-compact-down{
     display:none;
 }
-#searchFilter .moreUp .bi-chevron-compact-up{
+#searchFilter .moreDown .bi-chevron-compact-up{
     display:none;
 }
 #searchFilter .filterDetail{

@@ -34,7 +34,6 @@
     
 
         new Chart(ctx,{
-            type:"bar",
             plugins:[ChartDataLabels],
             data:{
                 labels:day,
@@ -48,16 +47,19 @@
                     tension:0.2,
                     datalabels:{align:"end",anchor:"end"}
                 },{
+                    type:"bar",
                     label:"clove",
                     data:clove,
                     backgroundColor:"#f6c0c5",
                     datalabels:{align:"end",anchor:"end"}
                 },{
+                    type:"bar",
                     label:"plove",
                     data:plove,
                     backgroundColor:"#89ecda",
                     datalabels:{align:"end",anchor:"end"}
                 },{
+                    type:"bar",
                     label:"nlove",
                     data:nlove,
                     backgroundColor:"#7fa092",

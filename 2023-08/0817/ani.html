@@ -24,11 +24,24 @@
         data:{
             labels:labels,
             datasets:[{
+                label:"평균연애기간",
                 data:data1,
                 base:avg,
                 backgroundColor:avg_color(),
             }]
         },options:{
+            animations:{
+                y:{
+                    duration:1000,  //동작시간 (ms단위)
+                    easing:"liner", //감속,가속
+                    from:1,         //애니메이션 시작값
+                    //loop-반복여부, to- 애니메이션 끝값
+                },
+                x:{
+                    duration:1500,
+                    from:0,
+                }
+            },
             scales:{y:{min:0, max:30,}}
         }
     });

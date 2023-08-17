@@ -27,14 +27,14 @@
     color:#fff;
     font-weight:800;
 }
-#data_input .input_wrap{
+.input_wrap{
     display:flex;
     align-items:center;
     justify-content: center;
     padding:10px 0;
     column-gap:10px;
 }
-.category .money{
+.category, .money{
     width:150px;
     height:25px;
     border-color:darkseagreen;
@@ -53,4 +53,13 @@
     border:0;
     border-radius:5px;
     font-size:17px;
+}
+#chart_board{
+    display:flex;
+    justify-content: space-evenly;
+}
+#chart1, #chart2{
+    width:600px;
+    height:600px;
+    box-shadow: 2px 2px 2px 2px #ddd;
 }

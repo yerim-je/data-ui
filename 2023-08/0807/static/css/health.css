@@ -3,12 +3,9 @@
     margin:0;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
-#Hwrap{
-=======
 /* ul{list-style-type:none;} */
-#hWrap{
->>>>>>> 7d04a964c30f4a72fe35a10e181927514ce7d2db
+
+#Hwrap{
     width:1000px;
     margin:0 auto;
     position:relative;
@@ -120,13 +117,8 @@
     background:seagreen;
     color:#fff;
 }
-<<<<<<< HEAD
 #sort_wrap .asc .bi-caret-down{ display:none;}
 #sort_wrap .desc .bi-caret-up{ display:none;}
-=======
-#sort_wrap .asc .bi-caret-down{display:none;}
-#sort_wrap .desc .bi-caret-up{display:none;}
->>>>>>> 7d04a964c30f4a72fe35a10e181927514ce7d2db
 
 
 /* ============  본문 ============ */

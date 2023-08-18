@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-beta/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+</head>
+<body>
+    <div id="bb"><canvas id="bubble" width="700" height="700"></canvas></div>
+</body>
+</html>
+
+<script>
+    const data=[];
+    for(var i=0; i<=23; i++){
+        data.push( {x:i , y:Math.floor(Math.random()*101),
+        r:Math.floor(Math.random()*20)+1} );
+    }
+// 버블차트는 세가지의 값으로 표현하는 차트이다. 
+// x축에 사용될 값, y축에 사용될 값, 원의 크기를 표현하는 값
+// 동물원에서 1년동안 방문자들에 대한 차트를 만든다면
+// x축에는 월별 표기, y축에는 연령대를 (10대~70대), 원의 크기는 해당연령의 수를 사용하면 
+// 1년 중 어느 연령대가 많이 왓는지 확인이 가능하다.
+// 또는 세포분포도, 인구분포도, 화학작용에 따른 결과 등등
+    const ctx= $("#bubble")[0];
+    new Chart(ctx,{
+        type:"bubble",
+        data:{
+            datasets:[{
+                label:"예림이의 시간대별 피로도",
+                data:data,
+                backgroundColor:function(context){
+                    var index=context.dataIndex;
+                    
+                    
+                    console.log(context);
+                },
+            }]
+        }
+    });
+
+</script>

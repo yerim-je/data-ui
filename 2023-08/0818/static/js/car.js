@@ -1,21 +1,33 @@
-let data = [];  // 데이터 저장변수
-const ctx=$("#car")[0];
-let y=[];
+let data = new Object();
+const types=["하이브리드","수소","경유","휘발유","전기"];
 
 async function getData(){
-    var temp = await fetch("./static/js/연료별용도별자동차등록현황.json").then((r)=>r.json());
-    // console.log(temp); 
-    
+    var temp = await fetch("./연료별용도별자동차등록현황.json").then((r)=>r.json());
+    refine(temp);
 }
-$(async function(){
-    data = await getData();
-    var car =new Set();
-    var y = new Set();
 
-    $.each(data,function(i,item){
-        car.add(item.RIDNG_ODR);
-        y.add(item.REG_YY);
-        
-    })
-    console.log(car);
-})
+$(async function(){
+    await getData();
+});
+
+function refine(temp){
+    $.each(temp,function(i,c){
+        var type='';
+        if( (type=include(c.DTCONT)) == '' || c.PURPOS_DIV==="사업용") return true;
+        if( !(type in data) )
+            data[type]=new Object();
+        if( !( c.REG_YY in data [type]) )
+            data[type][c.REG_YY]=Number(c.RIDNG_ODR);
+        else
+            data[type][c.REG_YY]+=Number(c.RIDNG_ODR);
+    });
+    console.log(data);
+}
+
+function include(kind){
+    for(var i in type){
+        if(kind.indexOf(types[i]) > -1)
+            return types[i];
+    }
+    return '';
+}

@@ -37,34 +37,59 @@
     // getJSON은 json파일을 열어서 파일안의 내용을 가져오기 위한 함수이다.
     // getJSON("파일의 경로 또는 url", 가져와서 실행할 함수)
 
+    
+    // json파일을 자바스크립트의 객체로 가져왔기 때문에 이후의 코드는 
+    // 자바스크립트의 제어문, 함수등을 활용한다.
+    // input에 입력하여 검색하기 만들기
+    // 1. json 파일 불러오기
+    // 2. 가져온 객체 화면에 띄우기
+    //   - 화면에 표시하려면 json데이터가 어떤내용을 가지고 있는지 확인하고 
+    //   그에 맞는 html을 구상해야한다.
+    //   - 지금 json내용은 key부분이 이름이고, value부분이 감정이니깐 
+    //   화면에 표시 될 내용은 두가지뿐이다.
+    //   table을 활용할 것인지 div를 활용할 것인지 ol,ul,dl을 활용할 것인지
+    //   선택해야 한다. 어떤것을 사용할지는 제작자 본인이 알아서 판단
+    //   많이 만들어봐야 지금 데이터에는 어떤 태그 사용이 좋을지 알수 있다.
+    
+    // 3. 검색기능 만들기
+    //  검색은 어느범위까지 적용할 것인지 정해야 한다.
+    //  모든 내용에 적용할 것인지 아니면 특정 부분에만 적용할 것인지
+    //  지금 JSON 내용에서 이름만 검색하게 만들것이냐
+    //  감정 내용만 검색하게 만들 것이냐, 아니면 둘 다 가능하게 할 것이냐
+    
+    
     $.getJSON("./data/test.json",function(d){
         console.log(d);
         console.log(d.송은선);
-        $("#state_detail").append("<tr><td>1</td> <td>2</td></tr>")
+        var key_arr = Object.keys(d);
+        console.log(key_arr);   // Array는 배열
 
-        // json파일을 자바스크립트의 객체로 가져왔기 때문에 이후의 코드는 
-        // 자바스크립트의 제어문, 함수등을 활용한다.
-        // input에 입력하여 검색하기 만들기
-        // 1. json 파일 불러오기
-        // 2. 가져온 객체 화면에 띄우기
-        //   - 화면에 표시하려면 json데이터가 어떤내용을 가지고 있는지 확인하고 
-        //   그에 맞는 html을 구상해야한다.
-        //   - 지금 json내용은 key부분이 이름이고, value부분이 감정이니깐 
-        //   화면에 표시 될 내용은 두가지뿐이다.
-        //   table을 활용할 것인지 div를 활용할 것인지 ol,ul,dl을 활용할 것인지
-        //   선택해야 한다. 어떤것을 사용할지는 제작자 본인이 알아서 판단
-        //   많이 만들어봐야 지금 데이터에는 어떤 태그 사용이 좋을지 알수 있다.
+        // for(var i=0; i<key_arr.length; i++){
+        //     $("#state_detail").append("<tr><td>"+key_arr[i]+"</td><td>"+d[key_arr[i]] +"</td></tr>")
+        // }
+    $.each(key_arr,function(인덱스, 데이터){
+       $("#state_detail").append("<tr class='data_row'><td class='name'>"+데이터+"</td><td class='state'>"+d[데이터]+"</td></tr>") 
+    })
 
-        // 3. 검색기능 만들기
-        //  검색은 어느범위까지 적용할 것인지 정해야 한다.
-        //  모든 내용에 적용할 것인지 아니면 특정 부분에만 적용할 것인지
-        //  지금 JSON 내용에서 이름만 검색하게 만들것이냐
-        //  감정 내용만 검색하게 만들 것이냐, 아니면 둘 다 가능하게 할 것이냐
+        // $("#state_detail").append("<tr><td>"+key[0]+"</td> <td>"+d[key[0]]+"</td></tr>")
+        // $("#state_detail").append("<tr><td>"+key[1]+"</td><td>"+d[key[1]] +"</td></tr>")
+        // $("#state_detail").append("<tr><td>"+key[2]+"</td><td>"+d[key[2]] +"</td></tr>")
+        // $("#state_detail").append("<tr><td>"+key[3]+"</td><td>"+d[key[3]] +"</td></tr>")
+    });
 
-
-
-
-
+    $("#bt").click(function(){  // 검색기능 만들기
+        var word = $("#search").val();   //input 입력값 가져오기
+    //input 태그에 입력한 text가 포함되어 있는 또는 일치하는 text를 tbody에서 찾아야 한다.
+    // 찾아서 해당 tr만 화면에 표시, 나머지는 감추기를 해야한다.
+        $("#state_detail>tr").filter(function(idx){
+            
+            return $(this).text().indexOf(word) == -1;
+            // console.log(idx) // tr태그의 index
+            // return idx==0 || idx == 3;
+        }).toggle();
+        // #state)_detail > id가 state_detail인 태그
+        // #state)_detail>tr > id가 state_detail인 태그의 하위태그중 tr태그
+        // :nth-child(even) > 하위태그 중 짝수태그
 
     });
 </script>

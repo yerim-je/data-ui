@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <style>
+        *{box-sizing: border-box;}
+        #title, #list{
+            width:800px; text-align:center;
+            border: 2px solid #aaa;
+        }
+        #list{list-style-type: none; padding:0;}
+        #title b{display:inline-block;}
+        .hak, .name{width:20%;}
+        .dept{width:30%;}
+        .c,.web{width:10%}
+    </style>
+</head>
+<body>
+    <div>
+        <input type="checkbox" name="department" id="com">컴퓨터공학과
+        <input type="checkbox" name="department" id="info">정보통신학과
+    </div>
+    <div id="title">
+        <b class="hak">학번</b> <b class="name">이름</b> <b class="dept">학과</b>
+        <b class="c">c언어</b> <b class="web">웹</b>
+    </div>
+    <ul id="list">
+
+    </ul>
+</body>
+</html>
+<script>
+    $.getJSON("./data/test3.json",function(data){
+        
+    });
+</script>

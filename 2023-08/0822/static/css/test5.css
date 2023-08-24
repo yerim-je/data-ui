@@ -6,6 +6,17 @@ ul{list-style-type: none;}
 }
 #search_wrap{
     width:100%;
+    position:relative;
+}
+.chartMakeBt{
+    position:absolute;
+    right:20px; top:2px;
+}
+#chartBt{
+    padding:5px 8px;
+    background:LightCoral;
+    border:0;
+    border-radius: 5px;
 }
 #main_title{
     text-align: center;
@@ -14,7 +25,8 @@ ul{list-style-type: none;}
 .search_input{
     width:100%;
     display:flex;
-    justify-content: space-around;
+    justify-content:center;
+    column-gap: 5px;
     align-items: center;
 }
 .word_box{
@@ -47,7 +59,7 @@ ul{list-style-type: none;}
     color:#fff;
 }
 .search_detail{
-    width:90%;
+    width:95%;
     font-size:17px;
     border:1px solid #b3a9a3;
     padding:10px;
@@ -85,4 +97,8 @@ ul{list-style-type: none;}
 }
 .name{
     font-size:20px;
+}
+#student_chart{
+    width:800px;
+    height:500px;
 }

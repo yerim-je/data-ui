@@ -5,8 +5,8 @@ function initBoard(){
         $(".pan").each(function(){
             var idx= Number($(this).data("idx"));
             $(this).css("background","url(./static/image/"+board_img[idx]+")"); 
-            $(this).css("background-size","cover");    
-            $(this).append("<div class='location_name'>"+(board_img[idx].split(".")[0])+"</div>"); 
+            $(this).css("background-size","cover");
+            $(this).append("<div class='location_name'>"+(board_img[idx].split(".")[0])+"</div>")
         });
         
         var tmp=1;

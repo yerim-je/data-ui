@@ -1,7 +1,7 @@
 const board_img = ["카리나.jpg","태연.jpg","고윤정.jpg","제노.jpg","마크.jpg",
 "윈터.jpg","형원.jpg","원빈.jpg","찬영.jpg","태용.jpg","재현.jpg","텐.jpg",
 "민니.jpg","슈화.jpg","나띠.jpg","윤진.jpg","전소미.jpg","도영.jpg","재민.jpg",
-"지성.jpg","백현.jpg","경수.jpg"]
+"지성.jpg","백현.jpg","경수.jpg","지젤.jpg","닝닝.jpg","해찬.jpg","소희.jpg","츠키.jpg","차은우.jpg"]
 
 const board=[];
 var gamer=[]; // 참가자 정보 저장 

@@ -4,7 +4,7 @@ const board_img = ["카리나.jpg","태연.jpg","고윤정.jpg","제노.jpg","�
 "지성.jpg","백현.jpg","경수.jpg"]
 
 const board=[];
-var gamer=[];
+var gamer=[]; // 참가자 정보 저장 
 
 $(function(){
     for(var i=0; i<28; i++){ board.push(0);}
@@ -12,7 +12,8 @@ $(function(){
     draw();
     $("#setBt").click(setOpen);
     $("#dice_bt").click(dice_turn);
-
+    
+    
     t=setInterval(() => { // 참가자 등록 완료될때까지  감시 하기
         if(gamer.length>0){
             //console.log(gamer);

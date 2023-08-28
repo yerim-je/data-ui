@@ -1,5 +1,5 @@
-// import { sum as mySum } from './mymodule.js' as를 통해 다은 이름으로 변경ㄹ가능
-import {default as sum,makeTable} from './mymodule.js'
+// import { sum as mySum } from './myModule.js' as를 통해 다은 이름으로 변경ㄹ가능
+import {default as sum,makeTable} from './myModule.js'
 
 console.log(sum(10,20));
 // console.log(mySum(10,20)); -> default 

@@ -24,7 +24,7 @@
             }
         }
         function show(){
-            for( i=0; i<a.legnth; i++){
+            for( i=0; i<a.length; i++){
                 m3(a[i]);
                 m5(a[i]);
                 m35(a[i]);
@@ -39,7 +39,7 @@
         }
         function m5(num){
             if(num%5 == 0){
-                docuemnt.write("상수<br>");
+                document.write("상수<br>");
                 return true;
             }
             return false;
@@ -85,9 +85,9 @@
     반복문에서 특정 값이 나왔을 때 초기화를 시켜야 하는 조건이라면 함수를 이용해서 for문 안에 넣어야 하는 
     내용을 함수에 집어 넣어서 간결하게 만들어준다.
     함수 안에 함수를 불러올때는 함수를 지정할때와 같이 함수를 호출해야 한다.
-    fuction output(){
+    function output(){
         점수 가져오기(k,e,m)
-        totla(k,e,m)
+        total(k,e,m)
     }
     function total( a,b,c){
         return a+b+c

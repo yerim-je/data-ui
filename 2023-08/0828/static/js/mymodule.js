@@ -1,6 +1,6 @@
 // import는 외부에서 가져오는 방법이고
 // export는 외부로 내보내응 방법이다.
-export default function sum(a,b){   // sum함수를 외부로 내보낸다.
+export function sum(a,b){
     return a+b;
 }
 export function makeTable(id, row, col){

@@ -8,6 +8,7 @@ function initBoard(){
             $(this).css("background-size","cover");    
             $(this).append("<div class='location_name'>"+(board_img[idx].split(".")[0])+"</div>"); 
         });
+        
         var tmp=1;
         $(".top").each(function(){
             $(this).css("grid-area","top"+(tmp++));

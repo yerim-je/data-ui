@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        parse=function(href){   // url이라는 객체의 prototype에 등록
+            var tmp = href.split("?")[1];
+            var obj = new Object();
+            $.each( tmp.split("&"),function(i,t){
+                var param = t.split("=");
+                obj[param[0]] = param[1];
+            });
+            console.log(obj);
+            return obj;
+        }
+        $.getJSON("./data/member.json",function(member){
+            var href = decodeURIComponent(location.href);
+            var query = parse(href);
+
+            var isSuccess = false;
+            $.each(member,function(i,m){
+                if(m.sdmId === query.sdmId){
+                    if(m.sdmPw === query.sdmPw){
+                        isSuccess = true;
+                    }
+                }
+            });
+            if( isSuccess ) document.write("로그인 성공");
+            else document.write("로그인 실패");
+            console.log(isSuccess);
+        });
+    </script>
+</head>
+<body>
+    
+    <h3>로그인 처리하는 페이지</h3>
+</body>
+</html>

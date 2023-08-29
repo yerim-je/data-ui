@@ -14,11 +14,11 @@ var fs = require('fs');
 var app = http.createServer(function(request,response){
     var url = request.url;
     if(request.url=='/')
-        url='/index.html'
+        url='/src/index.html'
     if(request.url=='/sign')
-        url='/signup.html'
+        url='/src/signup.html'
     if(request.url=='/qs')
-        url='/question.html'
+        url='/src/question.html'
     
     if(request.url =='/favicon.ico'){
         return response.writeHead(404);

@@ -21,9 +21,25 @@ var app = http.createServer(function(request,response){
             url='/src/question.html';
         if(request.url=='/login')
             url='/src/login.html';
+
+        response.writeHead(200);
     }else{
         var page = query.part;
-        url ='/src/'+page+'.html';
+        var isLogin = 'false';
+        var id='';
+        if(page === 'login_check'){
+            for(var i in data){
+                if( data[i].sdmId === query.sdmId && data[i].sdmPw===query.sdmPw){
+                    isLogin='true' // 아이디 비번 일치하면 쿠키 생성
+                    id=query.sdmId;
+                    break;
+                }
+            }
+            url ='/src/'+page+'.html';
+        }
+        response.writeHead(200,{
+            'Set-Cookie':['isLogin='+isLogin, 'id='+id]
+        });
     }
     if(request.url =='/favicon.ico'){
         return response.writeHead(404);
@@ -33,7 +49,7 @@ var app = http.createServer(function(request,response){
     // var cookies = {};
     // cookies = cookie.parse(request.headers.cookie);
     // console.log(cookies.id);
-    response.writeHead(200);
+    
     response.end(fs.readFileSync(__dirname+url));
     // response.writeHead(200,{
     //     'Set-Cookie':['id=sky','pw=1234']

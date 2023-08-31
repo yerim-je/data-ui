@@ -1,5 +1,6 @@
 
 #side .login_bt a{
+    width:90%;
     height:50px;
     color:#fff;
     font-size:30px;
@@ -33,12 +34,11 @@
     width:100%;
 }
 #qsList .qsTitle{
-    width:97%;
-    margin:10px 0;
+    width:98%;
+    padding:0 10px;
     display:flex;
     justify-content: space-between;
     height:50px;
-    
     border-bottom:3px solid #b8c85e;
 }
 .qsTitle h2{
@@ -57,9 +57,8 @@
     text-decoration: none;
 }
 .search_wrap{
-    width:80%;
-    border:1px solid #769293;
-    border-radius:3px;
+    width:98%;
+    border-bottom:1px solid #769293;
     height:40px;
     font-size:25px;
     padding:3px;

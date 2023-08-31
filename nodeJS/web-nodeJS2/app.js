@@ -5,6 +5,7 @@ var fs = require('fs');
 var tempUrl=require('url');
 var cookie = require('cookie');
 
+
 const data = JSON.parse(fs.readFileSync('./data/member.json','utf8'));
 
 var app = http.createServer(function(request,response){
@@ -45,7 +46,7 @@ var app = http.createServer(function(request,response){
     }
     response.end(fs.readFileSync(__dirname+url));
 });
-app.listen(3000);
+app.listen(3000);   //포트번호
 
 
 

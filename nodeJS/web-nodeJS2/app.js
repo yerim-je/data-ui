@@ -22,28 +22,37 @@ var app = http.createServer(function(request,response){
             url='/src/login.html';
         response.writeHead(200);
     }else{
-        var page = query.part;
-        var isLogin = 'false';
-        var id='';
-        if(page === 'login_check'){
+        var page = query.part==undefined?'':query.part;
+        var sub = query.snb==undefined ? '': query.sub;
+        var cookie_arr=[];
+        if(sub=== 'question'){
+            cookie_arr=['sub=qs'];
+            url='/src/login.html';
+        }
+        if(page==='login_check'){
+            cookie_arr=['isLogin=false','id=""'];
             for(var i in data){
                 if( data[i].sdmId === query.sdmId && data[i].sdmPw===query.sdmPw){
-                    isLogin='true' // 아이디 비번 일치하면 쿠키 생성
-                    id=query.sdmId;
+                    //isLogin='true';//아이디비번 일치하면 쿠키 생성
+                    //id=query.sdmId;
+                    cookie_arr=['isLogin=true','id='+query.sdmId];
                     break;
                 }
             }
-            url ='/src/'+page+'.html';
+            url='/src/'+page+'.html';
         }
-        if(page === 'logout') 
-            url='/src/index.html';
+        if(page==='logout'){
+            cookie_arr=['isLogin=false'];
+            url='/src/index.html'; 
+        }
         response.writeHead(200,{
-            'Set-Cookie':['isLogin='+isLogin, 'id='+id]
+            'Set-Cookie':cookie_arr
         });
     }
     if(request.url =='/favicon.ico'){
         return response.writeHead(404);
     }
+
     response.end(fs.readFileSync(__dirname+url));
 });
 app.listen(3000);   //포트번호

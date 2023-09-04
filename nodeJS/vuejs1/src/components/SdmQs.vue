@@ -49,5 +49,7 @@ export default {
 
 <style>
 @import '@/assets/question.css';
-/* css파일을 가져올 경우 import로 가져오지만 그 앞에 @를 붙여야 한다. */
+/* css파일을 가져올 경우 import로 가져오지만 그 앞에 @를 붙여야 한다. 
+css에서 따로 export를 하지 않아도 가능하다.
+@는 절대경로를 의미한다.*/
 </style>

@@ -8,12 +8,12 @@ module.exports = {
         </section>
         <section id="side">
             <div class="login_bt">
+                ${login.url=='logout'?`<p>${login.id}</p>`:''}
                 <a href="/${login.url}">${login.text}</a>
             </div>
         </section>`;
         return( commonHTML( main, mainHTML, "index"));
     },
-
     loginHTML:function(main){
         var loginHTML=`
         <section id="content">
@@ -74,6 +74,53 @@ module.exports = {
             </div>
         </section>`;
         return (commonHTML( main, signHTML, "sign"))
+    },
+    questionHTML:function(main,login,qsData){
+        var tag='';
+        qsData.sort(function(a,b){
+            if(a.date < b.date ) return 1;
+            if(a.date > b.date ) return -1;
+            return 0;
+        });
+        for(var t of qsData){
+            tag+="<tr class='list'>"+
+            "<td class='qsI'>"+t.id+"</td>"+
+            "<td class='qsT'>"+t.title+"</td>"+
+            "<td class='qsW'>"+t.writer+"</td>"+
+            "<td class='qsD'>"+t.date+"</td>"+
+            "<td class='qsTo'>"+( t.to == 0 ? '미확인':'답변완료')+"</td>"+
+            "</tr>";
+        }
+        var qsHTML=`
+        <section id="content">
+            <div id="qsList">
+                <div class="qsTitle">
+                    <h2>문의</h2>
+                    <a href="javascript:questionWrite()">문의하기</a>
+                </div>
+                <div class="search_wrap">
+                    <i class="bi bi-arrow-through-heart-fill"></i>
+                    <input type="text" name="word" id="word">
+                </div>
+                <div class="qsList_box">
+                    <table>
+                        <thead>
+                            <th class="qsI">번호</th><th class="qsT">제목</th>                                <th class="qsW">작성자</th><th class="qsD">작성일</th>
+                            <th class="qsTo">답변</th>
+                        </thead>
+                        <tbody id="qs">
+                            ${tag}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="side">
+            <div class="login_bt">
+                <a href="/${login.url}">${login.text}</a>
+            </div>
+        </section>`;
+        return( commonHTML(main,qsHTML,"question"));
     }
 }
 
@@ -89,10 +136,11 @@ function commonHTML( main, html, css){
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>스드메의 모든것</title>  
+<title>스드메의 모든것</title> 
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="./lib/main.css">
 <link rel="stylesheet" href="./lib/${css}.css">
-
 </head>
 <body>
 <div id="wrap">
@@ -111,5 +159,4 @@ function commonHTML( main, html, css){
 </body>
 </html>
     `);
-
 }

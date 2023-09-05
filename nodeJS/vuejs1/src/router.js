@@ -22,6 +22,16 @@ const routes =[
         path:"/qs",
         name:"SdmQs",
         component:() => import('@/components/SdmQs.vue')
+    },
+    {
+        path:"/dress",
+        name:"SdmDress",
+        component:() => import('@/components/SdmDress.vue')
+    },
+    {
+        path:"/makeup",
+        name:"SdmMakeup",
+        component:() => import('@/components/SdmMakeup.vue')
     }
 ];
 

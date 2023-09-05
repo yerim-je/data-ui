@@ -1,0 +1,51 @@
+main{
+    width:100%;
+    display:flex;
+}
+#content{
+    width:100%;
+}
+#content #top{
+    width:100%;
+}
+#top .m_title{
+    font-size:40px;
+    padding:15px;
+}
+#top img{
+    width:100%;
+}
+#middle #dress_wrap{
+    width:100%;
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin:80px 0;
+}
+#dress_wrap li{
+    width: 33%;
+    font-size:17px;
+    margin-bottom:30px;
+    padding:0;
+    border:1px solid #c0c0c0;
+}
+#dress_wrap div{ padding:5px;}
+#dress_wrap .shop{font-size:23px;}
+#dress_wrap .time{
+    font-size:15px;
+    color:gray;
+}
+#dress_wrap li img{
+    width:100%;
+    padding:10px 0;
+}
+
+
+
+
+#side{
+    position:absolute;
+    top:40px;
+    right:0;
+}

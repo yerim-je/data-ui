@@ -1,4 +1,7 @@
 <template>
+  <b-button>버튼</b-button>
+
+  
   <header id="header">
     <div class="logo"><a href="/"><img src="./assets/logo.png" alt="로고이미지"></a></div>
     <div class="nav">
@@ -19,7 +22,8 @@ export default {
   name: 'App',
   components: {
     
-  }
+  },
+  compatConfig: { MODE:3}
 }
 </script>
 

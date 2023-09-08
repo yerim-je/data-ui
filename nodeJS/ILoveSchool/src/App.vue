@@ -1,18 +1,18 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-
 </script>
 
 <template>
   <header>
-
     <div class="wrapper">
-      <img class="logo" src="@/assets/main.jpg"/>
+      <img class="logo" src="@/assets/main.jpg" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-        <RouterLink to="/msg">축하메세지</RouterLink>
 
+        <RouterLink to="/login">Login</RouterLink>
+        <RouterLink to="/logout">Logout</RouterLink>
+
+        <RouterLink to="/msg">축하메세지</RouterLink>
       </nav>
     </div>
   </header>
@@ -28,7 +28,7 @@ header {
 
 .logo {
   display: block;
-  width:500px;
+  width: 500px;
   margin: 0 auto 2rem;
 }
 

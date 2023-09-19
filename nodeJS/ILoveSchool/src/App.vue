@@ -1,5 +1,18 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+const sessionStorage = window.sessionStorage;
+const uid = sessionStorage.getItem('user_id')
+export default{
+  name:'App',
+  data(){ return { uid } },
+  methods:{
+    logout(){
+      if(uid1==null){
+        sessionStorage.removeItem('user_id')
+      }
+    }
+  }
+}
 </script>
 
 <template>
@@ -9,8 +22,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Home</RouterLink>
 
-        <RouterLink to="/login">Login</RouterLink>
-        <RouterLink to="/logout">Logout</RouterLink>
+        <RouterLink v-if="uid==null" to="/login">Login</RouterLink>
+        <button v-on:click="logout" v-if="uid!==null" to="/logout">Logout</button>
 
         <RouterLink to="/msg">축하메세지</RouterLink>
       </nav>

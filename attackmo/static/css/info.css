@@ -57,7 +57,22 @@
     flex-wrap:wrap;
     gap:85px 26px;
 }
-.movie img{
+.rec_movie{
+    position:relative;
+}
+.summary{
+    width:230px;
+    height:328.5px;
+    position:absolute;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    text-align: center;
+    vertical-align: middle;
+    display:none;
+}
+.rec_movie img{
     width:230px;
     height:328.5px;
 }
@@ -70,7 +85,7 @@
 .card{width:230px;height:340px;
     background:#F9C041;border-radius:10px;
 }
-.rec_movie{width:230px;height:230px;
+.history{width:230px;height:230px;
     ;display:flex; flex-wrap:wrap; 
     gap:10px;padding:10px;}
 .thumbnail{
@@ -88,5 +103,4 @@
     position:relative;
     top:30px;
     left:20px;
-
 }

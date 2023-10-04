@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //" ",' ' : 문자열을 뜻 한다. (//는 한줄짜리 주석 /**/는 여러줄의 주석)
+      /*암묵적으로 ''는 고유대명사 또는 변하지 않는 문자열을 사용할때
+    
+    변수 - 데이터가 저장되는 메모리 공간
+        자바스크립트에서는 변수의 공간에 어떠한 데이터라도 저장 가능.
+    "=" 연산자. 컴퓨터에서는 대입연산자라고 한다.
+    대입연산자는 오른쪽의 값을 왼쪽에 저장
+    비교연산자 '==' 또는 '==='
+    */
+
+      //variable(변수) = var
+      var a;
+      var hrl;
+      var number = 10;
+      number10 = "aaaaa";
+
+      document.write("<b>" + number + "</b><br>");
+      var width = "40";
+      var height = "160"; //문자열 자체가 숫자로 이루어져 있으면 숫자로 인식해 계산이 된다.
+
+      document.write(width * height + "<br>");
+
+      //순향이가 사과 10개, 순호가 딸기 5개, 순겸이가 배 15개 있다.
+      //세사람이 가지고 있는 과일은 총 몇개인지 출력
+      //각 세사람마다 변수 지정
+
+      var apple = 10;
+      var berry = 5;
+      var pear = 15;
+
+      document.write(
+        "<div>과일은 총" + (apple + berry + pear) + "개 이다.</div>"
+      );
+
+      document.write("안녕 난 니 인생을 망치러 온 자바스크립트란다.<br>");
+      document.write("오늘 뭐 먹었니<br>");
+      document.write("사과 먹었다<br>");
+
+      var width = 15;
+      var height = 20;
+      // 밑면15, 높이 20을 가지는 삼각형의 넓이를 구하여 줄력하시오.
+      // 출력결과 ->  밑변:15  높이:20
+      //              삼각형의 넓이 : 150
+      document.write("밑변 :" + width + "높이 :" + height);
+      document.write("<br>삼각형의 넓이 :" + (width * height) / 2 + "<br>");
+
+      var tall = 180;
+      var my_tall = "나의 키는 " + tall;
+
+      document.write(my_tall);
+
+      my_tall = "예림이 키는 " + 160;
+      document.write(my_tall);
+
+      var num1 = 10;
+      var num2 = 30;
+      //num1+num2  , num1-num2,  num1*num2,  num1/num2
+      document.write("<br><br>");
+      document.write(num1 / num2 + "<br>");
+      document.write((num1 % num2) + "<br><br><br>");
+
+      /*
+    오늘의 숙제
+    반지름이 r인 원이 있다. 이 원의 넓이와 둘레를 구하여 출력
+    */
+
+      var r = Number(prompt("반지름을 입력하시오"));
+
+      // prompt 함수는 브라우저에서 입력창을 제공하는 기능을 가지고 있다.
+      // prompt로 입력한 내용은 반드시 무조건! 문자열이다.
+      // 문자열 -> 숫자 변환 하는 방법 : Number(), parseInt()
+      // prompt를 Number로 감싸준다.
+      // 현재 문자열인지 수자열인지 데이터를 확인하고 싶다면 document.write( typeof(""))을 사용한다.
+      //NaN( NOt a Number )
+      // Number() : 숫자만 있는 문자열인 경우에 변환 가능
+      // parseInt() : 숫자와 문자가 섞여있어도 변환 가능
+      //              문자열의 앞쪽에 있는 숫자만 변환
+      //
+
+      document.write(typeof r);
+      var area = r * r * 3.14;
+      var dist = r * 2 * 3.14;
+      document.write(
+        "원의 넓이 : " + area + "    원의 둘레 : " + dist + "<br><br>"
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+    //loop : 원하는 만큼 규칙적인 값을 쓰는 방식 예)자동채우기
+   
+
+    // for(var i=1; i<=13; i++){
+    //     document.write("<div>"+i+"</div>")
+    // }
+    /*
+        제어문은 공통적으로 조건에 의해 동작.
+        반복문은 정해진 횟수만큼 반복을 시킬 수 있고 무한대로 반복할 수 있다.
+        반복문은 사용시 무한루프에 빠지지 않게 코드를 작성해야 한다.
+        반복문에 무한루프 사용시에는 항시 빠져나올수 있는 코드를 둬야 한다.
+
+        반복문은 기본적으로 지정된 횟수만큼 실행될 수 있다.
+        지정된 횟수만큼 실행되려면 처음 시작값과 끝값이 필요하다.
+        시작값을 1, 끝값을 10으로 설정하면 1,2,3,4,5,6,7,8,9,10 총 숫자가
+        10개이므로 반복횟수는 10번 반복된다.
+        시작값과 끝값을 설정하고 시작값에서 얼마씩 증가할 것인지, 또는 감소할 것인지
+        설정도 필요하다. 증가 또는 감소의 값에 따라서 반복되는 횟수가 달라진다.
+
+        for(시작값; 끝값; 증가 또는 감소){ 
+            i=i+2  2씩 증가
+            i=i+4  4씩 증가
+        }
+        for(var i=1; i<=10; i++){
+
+        }
+        반복문에 설정해준 조건식이 참인경우에만 반복문의 블럭{ }안에 내용이 실행된다.
+        조건식이 거짓이 되면 반복문은 그 즉시 종료, 더 이상 실행되지 않는다.
+
+        시작값은 특별한 경우가 아니라면 반복횟수의 편의를 위해 또는 1또는 0부터 시작한다.
+        증가 또는 감소값은 특별한 경우가 아니라면 1씩 증가, 감소한다.
+        for, while 동작순서
+         초기값> 조건식> 참> 내용> 증감식> 조건식>...( 조건식이 거짓이 될때까지 실행)>조건식> 거짓> 종료
+         조건식이 i<=5이면 i가 6일 경우 거짓이기 때문에 i가 6인 상태에서 반복문이 종료된다.
+        반복되는 숫자가 정해져있는 경우 for문을 많이 사용한다.
+        i=5 일때 10번 반복하고 싶은 경우 i<15; 라는 조건을 넣거나 i<=14 라는 조건을 넣는다.
+    */
+
+    //실습1. 1~9중에서 숫자 하나를 입력받아 입력한 숫자에 맞는 구구단을 출력하게 하시오.
+
+    // var num = parseInt(prompt("원하는 구구단을 숫자 형식으로 입력해주세요."));
+    // document.write("<b style=font-size:20px;>" + num + "단<br><br></b>");
+    // for(var i=1; i<=9; i++){
+    //     document.write("<div>"+num+ " * " +i+ " = " +i*num+"</div>");
+    // }
+
+
+    //실습2. 1부터 77까지 출력
+    // for(var i=1; i<=77; i++){
+    //     document.write("<div>" +i+"</div>");
+    // }
+    //실습3. 1부터 120까지 3씩 출력
+
+    //실습4. 정수 하나를 입력하고, 입력한 숫자를 시작값으로 하여 12번 반복하는 반복문 만들기
+    // var num = parseInt(prompt("정수를 입력하세요."));
+    // for(i=num; i<(num+12); i++){
+    //     document.write("<div>" +i+ "</div>");
+    // }
+    // var count=0;
+    // for(var i=1; i<=100; i++){
+    //     if(i%4 == 0)
+    //     count++;
+    // }
+    // document.write("1~100 중에서 4의 배수는 "+count+"개");
+
+    //동전 앞면, 뒷면 맞추기 게임을 10판 한다. 10번 해서 내가 몇번 이기고 졌는지
+    // var win=0; lose=0;
+    // for(var i=1; i<=10; i++){
+    //     var com = Math.floor(Math.random()*2)+1;
+    //     var me = parseInt(prompt("1. 앞면  2. 뒷면"))
+    //     if(com==me)
+    //     {document.write("정답!!<br>");
+    //     win++;}
+    //     else{
+    //         document.write("실패<br>");
+    //         lose++;
+    //     }
+        
+    // }
+    // document.write("승리 횟수 : "+win+"<br> 패배 횟수 : "+lose);
+
+    //주사위 던지기 게임10판
+    //컴퓨터와 내가 주사위 게임. 숫자가 큰 쪽이 승리. 같은 숫자는 비김.
+    //10판해서 내가 몇번 이기고 지고 비겼는지 출력
+
+    // var win=0; lose=0; drew=0;
+    // for(i=1; i<=10; i++){
+    //     var com = Math.floor(Math.random()*6)+1;
+    //     var me = Math.floor(Math.random()*6)+1;
+    //     if( me>com){
+    //         document.write("컴퓨터 : " +com+ "<br> 유져 : " +me+ "<br> <b style=color:red;>승리</b><br><br>")
+    //         win++;
+    //     }
+    //     else if (me==com){
+    //         document.write("컴퓨터 : " +com+ "<br> 유져 : " +me+ "<br> <b style=color:green;>동점</b><br><br>")
+    //         drew++;
+    //     }
+    //     else {
+    //     document.write("컴퓨터 : " +com+ "<br> 유져 : " +me+ "<br> <b style=color:gray;>패배</b><br><br>")
+    //     lose++;
+    //     }
+    // }
+    // document.write("<br>승리 횟수 : "+win+"<br>동점 횟수 : "+drew+"<br>패배 횟수 : "+lose);
+
+    /* for(초기값; 조건식; 증감식){
+
+    }
+    for문은 반복되는 횟수가 정해져 있는 경우 주로 사용
+    while문은 반복돠는 횟수가 정해져있지 않는 경우 사용
+    while문의 기본적인 형태
+    var i=1; 초기값
+    while( i<=10 ){   >>while문은 조건식만 밖에 나와 있고 나머지는 블럭{ } 안에 들어가 있기 때문에 ;을 사용하지 않는다.
+        조건식
+        내용;
+        i++; 증감식   
+    }
+
+    */
+    // var i=1;
+    // while(true){  //infinity
+    //     if(i==100) //무한루프를 끝내는 법
+    //         break;
+    //     i++;
+    // }
+
+    // while(true){
+    //     var num=parseInt(prompt("정수 입력"));
+    //     if(num==0) break;
+    // }
+
+    // //너비를 100px이상 입력하세요.
+    // while(true){
+    //     var width = parseInt(prompt("너비를 100px 이상 입력하시오"));
+    //     if (width >= 100) break;
+    // }
+
+    // up&down 게임
+    // 랜덤의 숫자 하나를 맞출때까지 계속 입력(1~50)
+    // 입력한 숫자가 랜덤값과 일차하지 않으면 up 또는 down 을 alert로 출력
+    // 정답이면 화면에 write로 랜덤 숫자와 함께 정답이라고 출력
+
+    // var com = Math.floor(Math.random()*50)+1;
+
+    // while(true){
+    //     var user = parseInt(prompt("1부터 50까지 정수를 입력하시오."))
+    //     if(com<user)
+    //         alert("down")
+    //     else if(com>user)
+    //         alert("up")
+    //     else if(com==user){
+    //         document.write("<div>랜덤 숫자"+com+"<br><b style=color:red;font-size:25px;>정답!!</b></div>");
+    //         break;
+    //     }
+    // }
+
+
+    var user = parseInt(prompt(" 랜덤숫자를 입력하세요.(1~50)"));
+    var max=50; i=50; k=1;
+    while(true){
+        var com = Math.floor ( Math.random () *i )+k;
+        if( user == com){
+            document.write("컴퓨터의 답은 : "+com+"<br>컴퓨터가 맞았습니다.");
+            break;
+        }
+        else if( user > com ){
+            k = com+1;
+            max = max-k+1;
+            document.write("컴퓨터가 생각한 답은 "+com+" UP!!<br>")
+        }
+        else if( user < com ){
+            max = com-1;
+            i= max-k+1;
+            document.write( "컴퓨터가 생각한 답은 "+com+" DOWN!!<br>" );
+        }
+    }
+    
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

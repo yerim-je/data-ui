@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="./static/js/func8.js"></script>
+<link rel="stylesheet" href="./static/css/func8.css">
+</head>
+<body>
+    <!-- 국어, 수학, 영어점수 input을 입력받기
+    입력받은 점수에 각 과목마다 등급 출력하기
+    세과목의 평균에도 등급 출력하기
+    100~90이면 A, 89~80 B, 79~70 C, 나머지는 F
+    출력내용은 알아서
+    다 한 사람 개별적 검사 -->
+    <div id="test">
+         국어<input type="text" id="kor" min="0" max="100"><br>
+         수학<input type="text" id="mat" min="0" max="100"><br>
+         영어<input type="text" id="eng" min="0" max="100"><br>
+        <button onclick="average()">평균</button><br>
+        <div id="result"></div>
+        <div id="kor_rat"></div>
+        <div id="mat_rat"></div>
+        <div id="eng_rat"></div>
+    
+    </div>
+</body>
+</html>

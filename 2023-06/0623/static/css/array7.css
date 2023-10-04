@@ -1,0 +1,167 @@
+*{ box-sizing : border-box;}
+body, ul, p, h1,h2,h3,h4,h5,
+ol,dl,dd{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+ul{
+    list-style-type: none;
+}
+#wrap{
+    width:85%;
+    min-width:500px;
+    max-width:1000px;
+    margin: 50px auto;
+}
+.line{
+    border-bottom:2px solid gray;
+}
+#menu{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:20px;
+}
+.menu_bt {
+    font-size:25px;
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:20px;
+    font-weight:900;
+}
+#menu .menu_bt:nth-child(1){
+    background:#c2f6fa;
+}
+#menu .menu_bt:nth-child(2){
+    background:#fac6c2
+}
+#menu .menu_bt:nth-child(3){
+    background:#dafac2;
+}
+.menu_list li:nth-child(1) .list_bt:hover{
+    background:#c2f6fa;
+    color:white;
+    font-weight:900;
+    text-shadow: 0px 0px 5px gray;
+}
+.menu_list li:nth-child(2) .list_bt:hover{
+    background:#fac6c2;
+    color:white;
+    font-weight:900;
+    text-shadow: 0px 0px 5px gray;
+}
+.menu_list li:nth-child(3) .list_bt:hover{
+    background:#dafac2;
+    color:white;
+    font-weight:900;
+    text-shadow: 0px 0px 5px gray;
+}
+.menu_icon{
+    display:none;
+    position:relative;
+}
+.strapIcon{
+    font-size:30px;
+    cursor: pointer;
+}
+/* 
+.strapIcon:active ~ .menu_list{
+    display:block;
+} 
+*/
+.menu_list{
+    display:none;
+    position:absolute;  /* 기준점이 부모기준으로 바뀜 다른 녀셕에 영향을 받지 않음 */
+    background:#fff;
+    color:#aaaaaa;
+    font-size:30px;
+    box-shadow: 0px 5px 10px gray;
+    width:100%;
+}
+
+.list_bt{
+    display:block;
+    padding: 10px;
+
+}
+
+
+
+.makeTable{
+    border-spacing:10px;
+    width:400px;
+    margin:50px auto;
+}
+
+.makeTable tr .numTd:first-child{
+    border: 0;
+    width:10%;
+}
+
+.numTd{
+    border:1px solid #9c5ac6;
+    width:50px;
+    height:50px;
+    text-align: center;
+    border-radius:100%;
+}
+
+#inpur_box{
+    width:320px;
+    margin:50px auto;
+}
+.mynum{
+    width:50px;
+    height:50px;
+    font-size:30px;
+    text-align:center;
+    margin-right:2px;
+}
+.mynum::-webkit-inner-spin-button,
+.mtnum::-webkit-outer-spin-button{
+    -webkit-appearance: none; margin:0;
+}
+#bt{
+    position:relative;
+    width:320px;
+    margin:0 auto;
+    text-align:center;
+    top: -20px;
+}
+#bt button{
+    border:0;
+    background:#f7edfe;
+    font-size:25px;
+    padding:5px 25px;
+    color:#e2c2fa;
+    border-radius:30px;
+}
+
+.list_active{
+    display:block;
+}
+
+/* 
+    이하 : min-width;
+    이상 : max-width;
+    웹 제작을 pc우선으로 제작 시 max-width
+    모바일 우선으로 제작 시 min-width
+*/
+
+@media screen and (max-width:786px) {
+    #menu{
+        display:block;  /*전체 공간을 사용하기 위해 변경 */
+        position:relative;
+    }
+    .menu_icon{
+        display:block;
+    }
+    .menu_bt{
+        display:none;
+    }
+}

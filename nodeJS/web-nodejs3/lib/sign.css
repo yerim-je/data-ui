@@ -1,0 +1,49 @@
+#content{
+    width:600px;
+    position:relative;
+    left:200px;
+    border:2px dashed #b8c85e;
+}
+#content h3{
+    margin: 30px auto;
+    font-size: 30px;
+    text-align: center;
+}
+.join_wrap{
+    width:500px;
+    margin:0 auto;
+}
+.join_input{
+    width:100%;
+    text-align:center;
+    padding-bottom:5px;
+    border-bottom:1px solid #6c7481;
+    margin-top:5px
+}
+.join_input label{
+    display:inline-block;
+    width:120px;
+    font-size:19px;
+}
+.join_input input{
+    width:250px;
+    height:30px;
+    font-size:15px;
+}
+.join_bt{
+    width:130px;
+    padding:30px 0;
+    margin:0 auto;
+}
+.join_bt button{
+    padding:8px 30px;
+    font-size: 20px;
+    border:0;
+    border-radius:5px;
+    background:#f4d2c8;
+    color:#6c7481;
+}
+.join_bt button:hover{
+    background:	#e28274;
+    color:#fcf4cb;
+}

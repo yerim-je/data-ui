@@ -4,6 +4,7 @@
 .back{
     width:100%;height:100vh;
     background:url("../img/background.png");
+
     position: fixed;
     z-index:-10;
 }
@@ -37,6 +38,7 @@
 }
 #home{
     height:100vh;
+    background:url("../img/main.png");
     background-size:cover;
     display: grid;
     place-items: center;
@@ -48,7 +50,7 @@
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: 2em;
+    font-size: 3em;
 }
 @keyframes typing {
     from {
@@ -83,44 +85,21 @@
 }
 .card div{padding: 10px;}
 .card div i{padding:0 10px;}
-
-#skill{
+#skill_wrap{
     width:1000px;
     margin:0 auto;
-    padding-top:60px;
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
-    grid-auto-flow:dense;
+    padding-top:100px;
 }
-.front, .data, .etc{
-    height:100%;
-    background: #fff;
-    border-radius:20px;
-    box-shadow:10px 10px 10px rgba(0,0,0,0.3);
-    display:grid;
-    grid-auto-flow:dense;
-    padding:30px;
-    margin: 30px auto;
+#skill{
+    background:#fff;
+    width:100%;
 }
-.front{
-    grid-row:1/4;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr);
-    gap:10px;
-}
-.front img{width:100%;}
-.front img:nth-child(4){
-    grid-column:1/4;
-    height:150px;
+#skill div img{
+    height: 80px;
+    padding: 20px;
 }
 
-.data img{height:100px;}
-
-.etc img{height:130px;}
-
-
-.pj_1,.pj_2{
+.pj_1,.pj_2,.pj_3{
     width:300px;
     height:500px;
     overflow: hidden;
@@ -130,9 +109,17 @@
     margin:100px 50px;
     text-align: center;
 }
+.pj_1 a,.pj_2 a,.pj_3 a{
+    text-decoration: none;
+    color:black;
+    border-radius: 5px;
+    padding: 3px 10px;
+    background:#F3D3B7;
+}
 .pj_logo{
     height:300px;
 }
 .pj_logo img{
     width:100%;
+    padding:10px;
 }

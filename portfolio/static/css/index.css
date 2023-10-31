@@ -1,4 +1,10 @@
-*{padding:0;margin:0;box-sizing: border-box;}
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{padding:0;margin:0;box-sizing: border-box;font-family: 'NanumSquareNeo-Variable';}
 #main{width:100%;margin:0 auto; 
 }
 .back{
@@ -44,8 +50,8 @@
     place-items: center;
 }
 #home div{
-    width: 22ch;
-    animation: typing 2s steps(22)  alternate, blink .5s step-end infinite alternate;
+    width: 23ch;
+    animation: typing 3s steps(23)  infinite alternate, blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -71,9 +77,14 @@
     width:1000px;
     margin: 100px auto;
     background: #fff;
-    padding:10vh;
+    padding: 50px 30px;
     border-radius: 30px;
-    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.3);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    align-items: center;
+    box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.3);
+    column-gap:30px;
     position:relative;
 }
 .c_t{
@@ -83,43 +94,93 @@
     font-size:30px;
     font-weight:800;
 }
-.card div{padding: 10px;}
-.card div i{padding:0 10px;}
-#skill_wrap{
-    width:1000px;
-    margin:0 auto;
-    padding-top:100px;
+.card img{
+    height:290px;
+    grid-row: 1/4;
 }
-#skill{
-    background:#fff;
-    width:100%;
+.name,.birth,.mobile,.address{
+    width:300px;
+    padding: 10px;
+    font-size: 25px;
 }
-#skill div img{
-    height: 80px;
-    padding: 20px;
+.email{
+    width:500px;
+    padding: 10px;
+    font-size: 25px;
+    grid-column:2/4;
 }
 
-.pj_1,.pj_2,.pj_3{
-    width:300px;
-    height:500px;
-    overflow: hidden;
+#skill{
+    margin:0 auto;
+    padding:150px 0;
+}
+#skill_wrap{
+    width:1000px;
+    display:flex;
+    flex-wrap:wrap;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.3);
+    text-align: center;
     background:#fff;
+    padding: 100px 50px;
+    position:relative;
+}
+#skill_wrap div img{
+    height: 120px;
+    padding: 20px;
+}
+#project{
+    width:1000px;
+    margin: 0 auto;
+    padding:80px 0;
+}
+
+.pj_wrap{
+    width:1000px;
+    padding:100px 0;
+    position:relative;
+}
+.pj{
+    width:100%;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
     border-radius:15px;
     box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
-    margin:100px 50px;
-    text-align: center;
+    margin:30px 0;
 }
-.pj_1 a,.pj_2 a,.pj_3 a{
+.pj .des{
+    width: 70%;
+    padding: 25px;
+}
+.toggle-bar {
+    width: 20px;
+    height: 3px;
+    background-color: #000;
+    cursor: pointer;
+}
+.des div{padding:10px;}
+.bt_wrap a{
     text-decoration: none;
     color:black;
     border-radius: 5px;
     padding: 3px 10px;
     background:#F3D3B7;
+    cursor: pointer;
+    position:relative;
 }
-.pj_logo{
-    height:300px;
+.pj_2 .pj_img{
+    display:flex;
+    overflow: hidden;
 }
-.pj_logo img{
+.pj_2 .pj_img img{width:400px;}
+.pj_img{
+    width:400px;
+}
+.pj_img img{
     width:100%;
-    padding:10px;
+    padding:40px;
 }
+.ex_t{font-weight:700; margin-bottom:10px;}
+.part{font-size: 15px;}
+.text{font-size:12px; padding: 3px;}

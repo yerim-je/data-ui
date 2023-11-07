@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <style>
+        #wrap{width:500px; margin:10px auto; box-shadow: 1px 1px 1px 1px #ddd;}
+        #input_box{width:100%; text-align: center;}
+        #bt{width:50px; height:30px;}
+        #keyword{width:200px; height:25px; }
+        #title{
+            width:100%;
+            display:flex;
+        }
+        #title h3{
+            margin-left:30px;
+            width:30%;
+        }
+        .list_t{
+            display:flex;
+            border:1px solid #ddd;
+        }
+        .list_t .name{
+            width:30%;
+            border-right:1px solid #ddd;
+            padding:5px 20px;
+        }
+        .detail{
+            padding:5px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="input_box">
+            <input type="text" name="keyword" id="keyword">
+            <button id="bt">검색</button>
+        </div>
+        <div id="list">
+            <div id="title">
+                <h3>가게</h3>
+                <h3>메뉴</h3>
+            </div>
+            <div id="list_detail"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+$.getJSON("./data/test2.json",function(data){
+    var arr = Object.keys(data);
+    $.each(arr,function(i,item){
+        $("#list_detail").append("<div class='list_t'><div class='name'>"+
+            item+"</div><div class='detail'>"+data[item]+"</div></div>");
+    });
+    console.log(arr);
+});
+
+$("#bt").click(function(){
+    var word = $("#keyword").val();
+    
+    $(".list_t").filter(function(){
+        a = $(this).children(".detail").text().indexOf(word) > -1;
+        $(this).toggle(a);
+    });
+});
+
+</script>

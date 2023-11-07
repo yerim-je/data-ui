@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    body{
+        width:500px;
+        margin:50px auto;
+    }
+   
+    table tr td{
+        width:50px;
+        height:50px;
+        border:2px solid dimgray;
+        text-align: center;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <td class="day">월</td>
+            <td class="day">화</td>
+            <td class="day">수</td>
+            <td class="day">목</td>
+            <td class="day">금</td>
+            <td class="day">토</td>
+            <td class="day">일</td>
+        </tr>
+        <tr>
+            <td class="color"></td>
+            <td class="color"></td>
+            <td class="color"></td>
+            <td class="color"></td>
+            <td class="color"></td>
+            <td class="color"></td>
+            <td class="color"></td>
+        </tr>
+    </table>
+    <div id="socks"></div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const 양말 = ["빨강","주황","노랑","초록","파랑","보라","검정","흰색","회색","아이보리"];
+
+        $(".color").each(function(i) {
+            var random = Math.floor(Math.random() * 7);
+            i = random;
+            $(this).text(양말[i]);
+        });
+
+        $("#socks").text(양말);
+
+        $(".color").click(function() {
+            const index = $(".color").index(this);
+            양말.splice(index, 1);
+            $(this).empty();
+            $("#socks").text(양말);
+        });
+    </script>

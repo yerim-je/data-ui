@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join_save</title>
+    <script>
+
+        const id_list = ["aa","god","sky","note","skyblue","abcd","ksh","lss","gold1234"]
+
+        var url = location.href;    // 파라미터 포함 전체 가져오기
+        var params = url.split("?");
+        // 현재주소에서 파라미터 부분 분리 - 파리미터는 ?가 뒤에 붙는다.
+        if(params.length==2){
+            params = params[1];
+            id = getParam("id",params);
+            password = getParam("pw",params);
+
+            if(id_list.indexOf(id) != -1){
+                alert("등록된 아이디입니다.");
+                // location.href="join.html";
+                history.back();   // 윈도우창의 뒤로가기(이전페이지)
+                // history 객체는 브라우저에서 방문한 페이지를 기록해두는 객체이다.
+                // 괄호 안에 -2를 입력하면 이전이전 페이지로 넘어간다(script_object3.html)
+            }
+
+            document.write("아이디 : "+id+" 비밀번호 : "+password);
+            // params가 2개 일때 params에 1번 인덱스로 저장한다.
+        }
+
+        function getParam(name, parameter){
+            var temp = parameter.split("&")
+            for(i=0; i<temp.length; i++){
+                if(temp[i].split("=")[0] === name){
+                    return temp[i].split("=")[1];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

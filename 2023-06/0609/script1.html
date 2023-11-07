@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    // 1. 도형 입력하기(  정사각형, 직각사각형, 원형)
+    // 2. 배경색 입력하기 ( 빨강, 파랑, 노랑, 핑크)
+    // 3. 너비크기 입력하기 (100px 이상 입력, 원형을 선택한경우 너비는 반지름)
+    // 4. 높이 입력하기(100px 이상 입력, 원형을 선택한 경우 높이는 패스)
+    // 5. 정사각형 이라고 도형 입력했을경우  너비와 높이는 같아야 한다.
+    // 6. 화면에 도형 출력하기
+
+    var shape = prompt("원형 직사각형 정사각형중 원하는 도형을 입력하세요");
+    var color = prompt("색상을 입력하세요.(단, 영어로 입력해주세요.)");
+    var width = prompt("100xp이상의 너비를 입력하세요. (원형을 선택한 경우 반지름을 입력하세요.)");
+    var height = 0;
+    if(shape != "원형")
+        height = prompt("100px 이상의 높이를 입력하세요.");
+
+    if( shape === "원형"){
+        document.write("<div style=border-radius:100%;width:"+width+"px;height:"+width+"px;background-color:"+color+";></div>")
+    }
+    if( shape === "정사각형"){
+        document.write("<div style=width:"+width+"px;height:"+height+"px;background-color:"+color+";></div>")
+    }
+    if( shape === "직사각형"){
+        document.write("<div style=width:"+width+"px;height:"+height+"px;background-color:"+color+";></div>")
+    }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/rsp.css">
+    <script src="./static/js/rsp.js"></script>
+</head>
+<body>
+<!-- 가위바위보 게임 만들기(script_fun3 참고) -->
+<div id="box">
+    <div class="text">가위바위보 게임</div>
+    <div class="rsp">
+        
+        <img id ="g_img" src="./static/image/rock.png" alt="">
+    </div>
+    <button onclick="start()">START</button>
+    <div id="print"></div>
+    <div class="user">
+        <p onclick="select(0)"><img src="./static/image/scissors.png"></p>
+        <p onclick="select(1)"><img src="./static/image/rock.png"></p>
+        <p onclick="select(2)"><img src="./static/image/paper.png"></p>
+    </div>
+    
+    
+</div>
+
+</body>
+</html>

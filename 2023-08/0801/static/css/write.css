@@ -1,0 +1,25 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing:border-box;
+}
+#header{
+    width:1000px;
+    margin:30px auto;
+    position:relative;
+}
+#keyword{
+    font-size:25px ;
+    width:400px;
+}
+#key, #category{
+    font-size: 18px;
+}
+#content{
+    width:1000px;
+    margin:10px auto;
+}
+#text_box{
+    display:grid;
+    row-gap:20px;
+}

@@ -1,0 +1,104 @@
+*{padding:0; margin:0; box-sizing:border-box;}
+ul{list-style-type: none;}
+#wrap{
+    width:800px; margin:50px auto;
+    border:2px dashed #b38b6d;
+}
+#search_wrap{
+    width:100%;
+    position:relative;
+}
+.chartMakeBt{
+    position:absolute;
+    right:20px; top:2px;
+}
+#chartBt{
+    padding:5px 8px;
+    background:LightCoral;
+    border:0;
+    border-radius: 5px;
+}
+#main_title{
+    text-align: center;
+    padding:30px;
+}
+.search_input{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    column-gap: 5px;
+    align-items: center;
+}
+.word_box{
+    width:73%;
+    border:1px solid #aaa;
+    height: 30px;
+    border-radius:5px;
+    display:flex;
+    justify-content: space-around;
+}
+.word_box i{
+    font-size: 20px;
+    margin: auto 0;
+    color:	#b3a9a3;
+}
+.word_box input{
+    border:0;
+    width:400px;
+    font-size:20px;
+    font-weight:0;
+}
+#detail_bt{
+    padding:5px 20px;
+    background:	#d9d292;
+    border-radius:5px;
+    border:0;
+}
+#detail_bt:hover{
+    background:#C3BD83;
+    color:#fff;
+}
+.search_detail{
+    width:95%;
+    font-size:17px;
+    border:1px solid #b3a9a3;
+    padding:10px;
+    margin:10px auto;
+    
+}
+.hide{display:none;}
+.show{display:block;}
+.search_detail div{
+    border-bottom:1px solid #b3a9a3;
+    padding-bottom:3px;
+    margin-bottom:10px;
+}
+.search_detail div label{
+    display:inline-block;
+    padding-left:15px;
+    width:15%;
+}
+.search_detail div input, .search_detail div select{
+    width:100px;
+    padding-left:10px
+}
+#list_wrap{
+    display:flex;
+    margin:20px;
+    flex-wrap:wrap;
+    width:100%;
+    gap:20px;
+}
+.info{
+    width:30%;
+    text-align:start;
+    padding:15px;
+    border:1px solid #ddd;
+}
+.name{
+    font-size:20px;
+}
+#student_chart{
+    width:800px;
+    height:500px;
+}

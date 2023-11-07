@@ -1,0 +1,17 @@
+
+#btwrap{
+    text-align:center;
+}
+#btwrap button{
+    font-size:30px;
+    
+}
+
+
+#dice_wrap{
+    display:flex;
+    justify-content:space-evenly;
+}
+#dice_wrap div img{
+    width:300px;
+}

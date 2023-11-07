@@ -1,0 +1,131 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+#content{
+    width:1000px;
+    margin:0 auto;
+}
+.account{
+    width:100%;
+    margin-top:50px;
+}
+.account div{
+    display:flex;
+    justify-content:space-between;
+    margin:30px 0;
+}
+.info{
+    flex-wrap:wrap;
+    background:#B91646;
+    border-radius:10px;
+    color:#fff;
+}
+.info p,.info a{
+    width:440px;
+    margin:10px 30px;
+    font-size:23px;
+    font-weight: 800;
+}
+.info a{
+    text-align: end;
+    color:#fff;
+    text-decoration: none;
+}
+.review, .comment,.like,.mark,.sign_date{
+    font-size: 23px;
+}
+.num{
+    font-size: 26px;
+}
+#rec{
+    width:100%;
+    margin:100px 0;
+}
+.title{
+    display:flex;
+    justify-content: space-between;
+    font-size:23px;
+    margin:50px 0;
+}
+.slider{
+    width:100%;
+}
+.slide-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px 26px;
+}
+.rec_movie{
+    position:relative;
+}
+.summary{
+    width:230px;
+    height:328px;
+    position:absolute;
+    top:-310px;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    font-size:17px;
+    padding:10px;
+    color:#fff;
+    overflow:hidden;
+    text-align: center;
+    display:none;
+}
+.rec_movie img{
+    width:230px;
+    height:328.5px;
+}
+#rec_history{
+    margin-bottom:100px;
+}
+#history-wrap{width:100%;}
+.card{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px 26px;
+}
+.card_n{width:230px;height:340px;
+    background:#F9C041;border-radius:10px;
+    text-decoration: none; color:black;
+}
+.history{width:230px;height:230px;
+    ;display:flex; flex-wrap:wrap; 
+    gap:10px;padding:10px;}
+.thumbnail{
+    width:100px;
+    height:100px;
+    border-radius:10px;
+    overflow:hidden;
+}
+.thumbnail img{width:100px;height:142.8px;}
+.card_title{
+    font-size:23px;
+    height:110px;
+}
+.card_title b{
+    position:relative;
+    top:30px;
+    left:20px;
+}
+@media (max-width:1194px) {
+    #wrap{width:100vw;}
+    #content{width:90%;}
+    .info a, .info p{width:35%;margin:10px 10px;}
+    .slider{overflow-x: scroll;}
+    .slide-container{width:1000px;}
+    #history_wrap{overflow-x: scroll;}
+    .card{width:1000px;}
+}
+@media (max-width:490px) {
+    *{font-size:12px;}
+    #wrap{width:100vw;}
+    #content{width:90%;}
+    .account{width:100%;margin: 0 auto;}
+    .info a, .info p{width:35%;font-size:12px;margin:5px 10px;}
+    .num{font-size:15px;}
+    #rec, #rec_history{width:100%; margin:0 auto;}
+    .slider{overflow-x: scroll;}
+    .slide-container{flex-wrap:nowrap;}
+    #history_wrap{overflow-x:scroll;margin-bottom:40px;}
+    .card{flex-wrap:nowrap; column-gap:10px;}
+
+}
